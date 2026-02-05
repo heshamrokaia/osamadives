@@ -62,11 +62,11 @@ export default function Home() {
             <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 <strong className="text-blue-800">My family was the 4th to settle in Dahab in 1983</strong>,
-                when there was nothing here but sand and sea. I've watched this village transform
+                when there was nothing here but sand and sea. I&apos;ve watched this village transform
                 from a Bedouin fishing spot to a world-famous diving destination.
               </p>
               <p>
-                I've spent more time underwater than most people spend awake.
+                I&apos;ve spent more time underwater than most people spend awake.
                 <strong className="text-blue-800"> I know every rock, every drop-off, every secret spot</strong> in
                 the Gulf of Aqaba. The new guides? They read about these places in books.
                 I grew up swimming in them.
@@ -154,7 +154,7 @@ export default function Home() {
           </h2>
           <p className="text-xl mb-8 text-blue-100">
             Message me on WhatsApp. Tell me what you want to experience,
-            and I'll plan the perfect dive for you.
+            and I&apos;ll plan the perfect dive for you.
           </p>
           <a
             href="https://wa.me/201090208050?text=Hi%20Osama!%20I%20found%20you%20on%20OsamaDives.com%20and%20would%20love%20to%20book%20a%20dive!"
