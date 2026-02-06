@@ -1,0 +1,11 @@
+# Robots.txt for OsamaDives.com
+# https://osamadives.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://osamadives.vercel.app/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
