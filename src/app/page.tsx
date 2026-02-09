@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import * as gtag from "@/lib/gtag";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -319,12 +320,26 @@ export default function Home() {
             <Link
               href="#book"
               className="bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+              onClick={() =>
+                gtag.event({
+                  action: "cta_click",
+                  category: "engagement",
+                  label: "hero_start_diving",
+                })
+              }
             >
               Start Your Diving Journey
             </Link>
             <Link
               href="#about"
               className="bg-white/10 hover:bg-white/20 backdrop-blur text-white font-bold py-4 px-8 rounded-full text-lg transition-all border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              onClick={() =>
+                gtag.event({
+                  action: "cta_click",
+                  category: "engagement",
+                  label: "hero_meet_instructor",
+                })
+              }
             >
               Meet Your Instructor
             </Link>
@@ -670,6 +685,13 @@ export default function Home() {
                       className="block w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() =>
+                        gtag.event({
+                          action: "whatsapp_click",
+                          category: "conversion",
+                          label: course.title,
+                        })
+                      }
                     >
                       Book via WhatsApp
                     </a>
@@ -790,6 +812,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Message Osama on WhatsApp"
+                onClick={() =>
+                  gtag.event({
+                    action: "whatsapp_click",
+                    category: "conversion",
+                    label: "booking_section",
+                  })
+                }
               >
                 <div className="flex items-center gap-3">
                   <svg
@@ -814,6 +843,13 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Check available dates on calendar"
+                onClick={() =>
+                  gtag.event({
+                    action: "calendar_click",
+                    category: "conversion",
+                    label: "cal_com_booking",
+                  })
+                }
               >
                 <div className="flex items-center gap-3">
                   <svg
@@ -915,6 +951,13 @@ export default function Home() {
                 href="tel:+201090208050"
                 className="flex items-center gap-2 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded px-2 py-1"
                 aria-label="Call Osama at +20 109 020 8050"
+                onClick={() =>
+                  gtag.event({
+                    action: "phone_click",
+                    category: "conversion",
+                    label: "booking_section_phone",
+                  })
+                }
               >
                 <svg
                   className="w-5 h-5"
@@ -1089,7 +1132,16 @@ export default function Home() {
                 and occasional special offers. No spam - just useful stuff for
                 divers.
               </p>
-              <form className="flex gap-2">
+              <form
+                className="flex gap-2"
+                onSubmit={() =>
+                  gtag.event({
+                    action: "newsletter_signup",
+                    category: "engagement",
+                    label: "footer_form",
+                  })
+                }
+              >
                 <label htmlFor="newsletter-email" className="sr-only">
                   Email Address
                 </label>
@@ -1127,6 +1179,13 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Osama on WhatsApp"
+        onClick={() =>
+          gtag.event({
+            action: "whatsapp_click",
+            category: "conversion",
+            label: "floating_button",
+          })
+        }
       >
         <svg
           className="w-7 h-7"
