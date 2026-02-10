@@ -25,3 +25,81 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Facebook Gallery Item Tooltip Styles */
+@layer components {
+  /* Smooth tooltip animation */
+  .fb-gallery-tooltip {
+    animation: tooltipFadeIn 0.2s ease-out;
+  }
+
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  /* Gallery item hover effects */
+  .fb-gallery-item {
+    @apply transition-all duration-300;
+  }
+
+  .fb-gallery-item:hover {
+    @apply shadow-lg;
+  }
+
+  /* Click ripple effect */
+  .click-ripple {
+    animation: ripple 0.4s ease-out;
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* Stories lightbox scrollbar */
+  .stories-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .stories-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  .stories-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  .stories-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

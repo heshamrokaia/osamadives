@@ -4,120 +4,138 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import * as gtag from "@/lib/gtag";
+import FloatingBadge from "@/components/FloatingBadge";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const courses = [
+  // Diving experiences I love sharing about (NOT services I sell)
+  const divingExperiences = [
     {
       image: "/images/20250506_2155_Split-View-Dive-Adventure_simple_compose_01jtjq33dff84rv6vkcwef3g89.png",
       title: "Discover Scuba Diving",
-      tagline: "Your First Taste of the Underwater World",
+      tagline: "Where Fear Becomes Wonder",
       description:
-        "Not sure if diving is for you? This half-day experience lets you breathe underwater with zero commitment. No certification needed - just curiosity.",
+        "I have watched hundreds of faces transform the moment they take that first breath underwater. The panic fades, the eyes widen, and something shifts forever. Dahab's lagoon cradles beginners like a gentle hand - warm, calm, impossibly clear. This is where lifelong love affairs with the ocean begin.",
       location: "Dahab Lagoon",
-      duration: "Half Day",
-      requirements: "None - Try diving for the first time!",
-      includes: ["Equipment", "Photos", "Instructor"],
+      duration: "Typically Half Day",
+      level: "No experience needed",
+      highlights: ["Calm, shallow waters", "Warm year-round", "Life-changing moments"],
     },
     {
       image: "/images/OsamaDives_PADI_Open_Water.jpeg",
       title: "Open Water Diver",
-      tagline: "Your Passport to the Underwater World",
+      tagline: "The Passport to a Blue World",
       description:
-        "This is THE certification that opens every dive site on the planet. Learn in Dahab's calm, clear waters - the perfect classroom.",
+        "This certification unlocks every dive site on the planet. But more than that - it gives you a new way of seeing. You will learn to breathe, to float, to become weightless. Dahab's shore diving means no boats, no seasickness. Just you, the reef, and the beginning of something beautiful.",
       location: "Dahab",
       duration: "3-4 Days",
-      requirements: "None - Perfect for beginners!",
-      includes: ["PADI Certification", "Equipment", "Manual", "Photos"],
+      level: "Perfect for beginners",
+      highlights: ["World-recognized certification", "Shore diving", "Personal attention"],
       popular: true,
     },
     {
       image: "/images/Advanced Open Water.jpeg",
       title: "Advanced Open Water",
-      tagline: "Push Your Limits, Expand Your World",
+      tagline: "Where Comfortable Becomes Confident",
       description:
-        "Ready to go deeper? This course takes you to 30 meters and includes a night dive - experience the reef when nocturnal creatures come alive.",
+        "Night dives where your flashlight summons curious octopus. Deep dives where nitrogen plays tricks on your mind. Navigation by compass through underwater canyons. The Advanced course takes you places you never imagined - thirty meters down, you meet yourself.",
       location: "Dahab + North Sinai",
-      duration: "2 Days",
-      requirements: "Open Water Diver",
-      includes: ["PADI Certification", "Equipment", "Night Dive"],
+      duration: "2-3 Days",
+      level: "Open Water certified",
+      highlights: ["Dive to 30 meters", "Night adventures", "Personal discovery"],
     },
     {
       image: "/images/OsamaDives_Rescue_Diver_Course.png",
-      title: "Rescue Diver Course",
-      tagline: "Become the Diver Everyone Wants on Their Team",
+      title: "Rescue Diver",
+      tagline: "The Course That Transforms Divers",
       description:
-        "This course transforms good divers into great ones. Learn to prevent problems and respond when they happen. Many say it's the most important course they ever took.",
+        "Every diver who completes this course tells me the same thing - they feel changed. Not because they can save others now, though they can. But because they see the underwater world differently. Awareness sharpens. Compassion deepens. You stop being just a visitor to the reef and become its guardian.",
       location: "Dahab",
       duration: "3-4 Days",
-      requirements: "Advanced Open Water",
-      includes: ["PADI Certification", "Equipment", "EFR Training"],
+      level: "Advanced certified",
+      highlights: ["Emergency mastery", "Profound transformation", "Complete confidence"],
     },
     {
       image: "/images/OsamaDives_The_Blue_Hole.jpeg",
-      title: "Blue Hole Experience",
-      tagline: "Dive Into Legend",
+      title: "The Blue Hole",
+      tagline: "A Pilgrimage for Divers",
       description:
-        "The Blue Hole isn't just a dive - it's a bucket list item. I'll show you the best entry points, hidden features, and bring you back with a story you'll tell forever.",
+        "People ask why I never tire of the Blue Hole after thousands of dives. How could I? This sinkhole holds more moods than the sea has colors. Some mornings it mirrors the sky like glass. Other days, currents stir stories from the deep. I know every corner, every secret passage - and it still surprises me.",
       location: "Blue Hole, Dahab",
-      duration: "Half Day",
-      requirements: "Open Water Diver",
-      includes: ["Transport", "Equipment", "Guide", "Photos"],
+      duration: "Half Day Trip",
+      level: "Open Water certified",
+      highlights: ["World-famous site", "The Arch", "Local expertise"],
     },
     {
       image: "/images/Camels.jpeg",
-      title: "Safari Dive Trip",
-      tagline: "Camels, Desert, and Untouched Reefs",
+      title: "Ras Abu Galum Safari",
+      tagline: "The Old Way to the Sea",
       description:
-        "Travel by camel through the Sinai desert to Ras Abu Galum - a protected area with pristine reefs most tourists never see, plus a traditional Bedouin lunch.",
+        "Before trucks, before cars, Bedouins crossed Sinai by camel. This safari honors that tradition - riding through bronze canyons to reach reefs that speedboats will never find. You arrive the way visitors have for centuries: slowly, gratefully, ready to receive what the sea offers.",
       location: "Ras Abu Galum",
-      duration: "Full Day",
-      requirements: "Open Water Diver",
-      includes: ["Camel Ride", "2 Dives", "Bedouin Lunch", "Equipment"],
+      duration: "Full Day Adventure",
+      level: "Open Water certified",
+      highlights: ["Ancient traditions", "Pristine reefs", "Bedouin hospitality"],
     },
   ];
 
-  const testimonials = [
+  // Stories from fellow divers I've met over the years
+  const divingStories = [
     {
       name: "Sarah M.",
       country: "Germany",
       rating: 5,
-      text: "Osama made my first diving experience absolutely incredible. His patience and expertise gave me the confidence to explore the underwater world. I got my Open Water certification and I'm already planning my return trip!",
-      course: "Open Water Diver",
+      text: "Osama made my first diving experience absolutely incredible. His patience and expertise gave me the confidence to explore the underwater world. Dahab is now my favorite place on Earth!",
+      experience: "First time diving in Dahab",
     },
     {
       name: "James T.",
       country: "United Kingdom",
       rating: 5,
-      text: "The Blue Hole dive with Osama was the highlight of my trip to Egypt. His 15+ years of experience at this site really shows - he knows every inch of it. Felt completely safe the entire time.",
-      course: "Blue Hole Experience",
+      text: "The Blue Hole dive was the highlight of my trip to Egypt. Osama's 15+ years of experience at this site really shows. He knows every inch of it. Felt completely safe the entire time.",
+      experience: "Blue Hole adventure",
     },
     {
       name: "Maria L.",
       country: "Spain",
       rating: 5,
-      text: "I was terrified of diving but Osama's calm and reassuring approach helped me overcome my fears. The Discover Scuba experience was life-changing. Dahab is magical and Osama is the best instructor!",
-      course: "Discover Scuba Diving",
+      text: "After an amazing morning dive at the Canyon, Osama took us to his family's restaurant for the freshest seafood I've ever had. That's Dahab - the diving is incredible, but it's the hospitality that makes you want to come back.",
+      experience: "The complete Dahab experience",
     },
   ];
 
+  // Featured gallery images for homepage preview
   const galleryImages = [
     {
-      src: "/images/FB_IMG_1625154352007.jpg",
-      alt: "Scuba diver exploring vibrant coral reef in Dahab Red Sea Egypt",
+      src: "/images/OsamaDives_The_Blue_Hole.jpeg",
+      alt: "The famous Blue Hole dive site in Dahab, Egypt",
+      title: "The Blue Hole",
     },
     {
-      src: "/images/FB_IMG_1632329112940.jpg",
-      alt: "Underwater diving at The Canyon dive site Dahab Egypt",
+      src: "/images/OsamDives_The_Canyon.jpg",
+      alt: "The Canyon dive site in Dahab with dramatic underwater formations",
+      title: "The Canyon",
     },
     {
       src: "/images/20250507_2113_Vibrant-Coral-Reef_remix_01jtn7404xftcbbj5rpbj1xh15.png",
-      alt: "Colorful coral reef and tropical fish in Dahab Egypt Red Sea",
+      alt: "Vibrant coral reef in the Red Sea Dahab",
+      title: "Coral Gardens",
     },
     {
-      src: "/images/FB_IMG_1638331910256.jpg",
-      alt: "PADI diving course student exploring underwater in Dahab",
+      src: "/images/Camels.jpeg",
+      alt: "Camel safari to remote dive sites in Sinai",
+      title: "Desert Safari",
+    },
+    {
+      src: "/images/20250506_2155_Split-View-Dive-Adventure_simple_compose_01jtjq33dff84rv6vkcwef3g89.png",
+      alt: "Split view showing above and below water in Dahab",
+      title: "Two Worlds",
+    },
+    {
+      src: "/images/OsamaDives_Him_Self.jpeg",
+      alt: "Osama diving in crystal clear waters of Dahab",
+      title: "In My Element",
     },
   ];
 
@@ -138,15 +156,9 @@ export default function Home() {
         aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/logo_option11_dahab_iconic.png"
-              alt="Osama Dives Logo"
-              width={50}
-              height={50}
-              className="rounded-full"
-            />
-            <span className="text-white font-bold text-xl">Osama Dives</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="text-white font-bold text-xl group-hover:text-white/90 transition">OsamaDives</span>
+            <span className="text-white/60 text-sm hidden sm:inline">• Dahab Since 1983</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -164,16 +176,16 @@ export default function Home() {
               About
             </Link>
             <Link
-              href="#courses"
+              href="#experiences"
               className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e] rounded"
             >
-              Courses
+              Experiences
             </Link>
             <Link
-              href="#testimonials"
+              href="#stories"
               className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e] rounded"
             >
-              Reviews
+              Stories
             </Link>
             <Link
               href="#gallery"
@@ -182,10 +194,16 @@ export default function Home() {
               Gallery
             </Link>
             <Link
-              href="#book"
+              href="/blog"
+              className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e] rounded"
+            >
+              Journal
+            </Link>
+            <Link
+              href="#contact"
               className="bg-white text-[#5a5f4e] px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e]"
             >
-              Book Now
+              Contact
             </Link>
           </div>
 
@@ -253,18 +271,18 @@ export default function Home() {
                 About
               </Link>
               <Link
-                href="#courses"
+                href="#experiences"
                 className="block text-white/90 hover:text-white transition py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Courses
+                Experiences
               </Link>
               <Link
-                href="#testimonials"
+                href="#stories"
                 className="block text-white/90 hover:text-white transition py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Reviews
+                Stories
               </Link>
               <Link
                 href="#gallery"
@@ -274,11 +292,18 @@ export default function Home() {
                 Gallery
               </Link>
               <Link
-                href="#book"
+                href="/blog"
+                className="block text-white/90 hover:text-white transition py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Journal
+              </Link>
+              <Link
+                href="#contact"
                 className="block bg-white text-[#5a5f4e] px-4 py-3 rounded-full font-semibold text-center hover:bg-gray-100 transition mt-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Book Now
+                Contact
               </Link>
             </div>
           </div>
@@ -288,14 +313,14 @@ export default function Home() {
       {/* Hero Section */}
       <header className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/OsamaDives_Him_Self.jpeg"
-          alt="Osama - PADI Master Scuba Diver Trainer diving in the crystal clear waters of Dahab, Egypt"
+          src="/images/OsamaDives.png"
+          alt="Osama teaching a diving student in the crystal clear waters of Dahab, Egypt - PADI Master Scuba Diver Trainer"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10" />
 
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto mt-16">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
@@ -309,16 +334,19 @@ export default function Home() {
             Dive the Red Sea with a Local Who Knows Every Reef by Heart
           </p>
           <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed text-white/80">
-            I&apos;m Osama - born and raised in Dahab, where the desert meets
-            one of the world&apos;s most spectacular diving destinations. In 15
-            years, I&apos;ve guided 2,000+ divers through these waters. Whether
-            you&apos;re taking your first breath underwater or conquering the
-            legendary Blue Hole, I&apos;ll be right beside you.
+            I&apos;m Osama - my family was one of the first to settle in Dahab back in 1983,
+            opening the legendary{" "}
+            <a href="https://facebook.com/sharkrest.official" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-white/90 transition">
+              Shark Restaurant
+            </a>. After years of hosting visitors on land,
+            I took my hospitality underwater in 2011. Whether you&apos;re taking your first
+            breath underwater or conquering the Blue Hole, you&apos;re not just a tourist to me -
+            you&apos;re a guest in my home.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#book"
+              href="#contact"
               className="bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               onClick={() =>
                 gtag.event({
@@ -328,7 +356,7 @@ export default function Home() {
                 })
               }
             >
-              Start Your Diving Journey
+              Get in Touch
             </Link>
             <Link
               href="#about"
@@ -346,7 +374,7 @@ export default function Home() {
           </div>
 
           <p className="mt-6 text-white/60 text-sm">
-            PADI Certified Instruction | Contact for Pricing
+            PADI Master Scuba Diver Trainer | Pioneer Family Since 1983 | Shark Restaurant Legacy
           </p>
         </div>
 
@@ -502,31 +530,67 @@ export default function Home() {
                   className="text-4xl md:text-5xl font-light text-gray-900 mb-6"
                   style={{ fontFamily: "serif" }}
                 >
-                  Your Diving Journey Starts with the Right Guide
+                  From Shark Restaurant to the Deep Blue
                 </h2>
                 <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-                  My name is Osama, and I&apos;ve been breathing underwater in
-                  Dahab longer than most visitors have been diving anywhere.
+                  My name is Osama, and my family&apos;s story in Dahab begins in 1983 -
+                  when we became the fourth family to settle here, moving from Cairo
+                  to this remote paradise where the desert meets the sea.
                 </p>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  I grew up watching the sun rise over these mountains and set
-                  over the Red Sea. By 18, I was a certified instructor. Now, 15
-                  years and 2,000+ certified divers later, I still get the same
-                  thrill watching someone&apos;s face light up after their first
-                  underwater breath.
+                  My family opened <a href="https://facebook.com/sharkrest.official" target="_blank" rel="noopener noreferrer" className="text-[#5a5f4e] font-semibold hover:underline">Shark Restaurant</a> -
+                  now one of the most famous seafood restaurants in Dahab, ranked #1 on TripAdvisor.
+                  For decades, we&apos;ve welcomed visitors to our table. In 2011, I decided to extend
+                  that hospitality to a new dimension: underwater.
                 </p>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                  What makes diving with me different? I&apos;m not just your
-                  instructor - I&apos;m your local friend. I know which reef has
-                  the best octopus sightings this season, where the Napoleon
-                  wrasse hangs out, and the Blue Hole in all its moods.
+                  What makes diving with me different? I don&apos;t treat you as a tourist -
+                  you&apos;re a guest in my home. Just as we serve you at our restaurant with love,
+                  I share the underwater world with the same care. I know every dive site from north
+                  to south, the weather patterns, the sea life, and exactly where to find the magic.
                 </p>
 
                 <div className="space-y-4">
                   <h3 className="font-bold text-gray-900">
-                    Certified. Experienced. Trusted.
+                    Pioneer Family. Ambassador of Dahab.
                   </h3>
                   <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <svg
+                        className="w-5 h-5 text-[#5a5f4e] mt-0.5 flex-shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>
+                        <strong>4th Family to Settle in Dahab (1983)</strong> - Pioneer
+                        roots run deep in this community
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <svg
+                        className="w-5 h-5 text-[#5a5f4e] mt-0.5 flex-shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span>
+                        <strong><a href="https://facebook.com/sharkrest.official" target="_blank" rel="noopener noreferrer" className="hover:underline">Shark Restaurant</a> Legacy</strong> - Family hospitality
+                        since the early days of Dahab
+                      </span>
+                    </li>
                     <li className="flex items-start gap-2">
                       <svg
                         className="w-5 h-5 text-[#5a5f4e] mt-0.5 flex-shrink-0"
@@ -559,89 +623,61 @@ export default function Home() {
                         />
                       </svg>
                       <span>
-                        <strong>15+ Years Local Experience</strong> - Thousands
-                        of dives in these exact waters
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-[#5a5f4e] mt-0.5 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>
-                        <strong>IANTD Technical Diving Instructor</strong> -
-                        Advanced and technical certifications
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-[#5a5f4e] mt-0.5 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span>
-                        <strong>Rescue Diver & EFR Instructor</strong> - Your
-                        safety is my top priority
+                        <strong>Diving Since 2011</strong> - From serving guests on land
+                        to guiding them underwater
                       </span>
                     </li>
                   </ul>
                 </div>
 
                 <Link
-                  href="#book"
+                  href="#contact"
                   className="inline-block mt-8 bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-bold py-3 px-6 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#5a5f4e] focus:ring-offset-2"
                 >
-                  Let&apos;s Plan Your Dive
+                  Send Me a Message
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Courses Section */}
-        <section id="courses" className="py-20 px-4 bg-white">
+        {/* Diving Experiences Section */}
+        <section id="experiences" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <h2
               className="text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
               style={{ fontFamily: "serif" }}
             >
-              Find Your Perfect Dive Experience
+              Diving Experiences in Dahab
             </h2>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Whether you&apos;ve never been underwater or you&apos;re ready to
-              go deeper, there&apos;s a course waiting for you
+            <p className="text-center text-gray-600 mb-4 max-w-2xl mx-auto">
+              From my years exploring Dahab&apos;s waters, here are the diving
+              journeys I&apos;m most passionate about sharing
             </p>
 
+            {/* Compliance Notice */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-2xl mx-auto text-center">
+              <p className="text-blue-800 text-sm">
+                Interested in any of these experiences? I&apos;m happy to share recommendations
+                and help connect you with CDWS-registered dive centers in Dahab.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courses.map((course, i) => (
+              {divingExperiences.map((experience, i) => (
                 <article
                   key={i}
                   className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-xl transition-shadow relative"
                 >
-                  {course.popular && (
+                  {experience.popular && (
                     <div className="absolute top-4 right-4 bg-[#5a5f4e] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-                      MOST POPULAR
+                      MY FAVORITE
                     </div>
                   )}
                   <div className="relative h-48">
                     <Image
-                      src={course.image}
-                      alt={`${course.title} - PADI diving course in Dahab Egypt`}
+                      src={experience.image}
+                      alt={`${experience.title} - diving experience in Dahab Egypt`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover"
@@ -650,28 +686,28 @@ export default function Home() {
                   <div className="p-6">
                     <div className="mb-2">
                       <h3 className="text-xl font-bold text-gray-900">
-                        {course.title}
+                        {experience.title}
                       </h3>
                     </div>
                     <p className="text-sm text-[#5a5f4e] font-medium mb-3">
-                      {course.tagline}
+                      {experience.tagline}
                     </p>
                     <p className="text-gray-600 text-sm mb-4">
-                      {course.description}
+                      {experience.description}
                     </p>
                     <div className="space-y-1 text-sm text-gray-600 mb-4">
                       <p>
-                        <strong>Duration:</strong> {course.duration}
+                        <strong>Typical Duration:</strong> {experience.duration}
                       </p>
                       <p>
-                        <strong>Location:</strong> {course.location}
+                        <strong>Location:</strong> {experience.location}
                       </p>
                       <p>
-                        <strong>Requirements:</strong> {course.requirements}
+                        <strong>Level:</strong> {experience.level}
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {course.includes.map((item, j) => (
+                      {experience.highlights.map((item, j) => (
                         <span
                           key={j}
                           className="bg-[#5a5f4e]/10 text-[#5a5f4e] text-xs px-2 py-1 rounded"
@@ -681,8 +717,8 @@ export default function Home() {
                       ))}
                     </div>
                     <a
-                      href={`https://wa.me/201090208050?text=Hi%20Osama!%20I'm%20interested%20in%20the%20${encodeURIComponent(course.title)}%20course.%20Can%20you%20tell%20me%20more?`}
-                      className="block w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      href={`https://wa.me/201090208050?text=Hi%20Osama!%20I%20read%20about%20${encodeURIComponent(experience.title)}%20on%20your%20blog.%20Would%20love%20to%20hear%20more%20about%20this%20experience!`}
+                      className="block w-full bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-semibold py-2 px-4 rounded-lg text-center transition focus:outline-none focus:ring-2 focus:ring-[#5a5f4e] focus:ring-offset-2"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() =>
@@ -693,7 +729,7 @@ export default function Home() {
                         })
                       }
                     >
-                      Book via WhatsApp
+                      💬 Chat About This
                     </a>
                   </div>
                 </article>
@@ -702,28 +738,207 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Guest Testimonials Section */}
         <section id="testimonials" className="py-20 px-4 bg-[#f5f5f0]">
           <div className="max-w-6xl mx-auto">
             <h2
               className="text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
               style={{ fontFamily: "serif" }}
             >
-              What Divers Say
+              What Guests Say
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Join 2,000+ divers who started their underwater journey with Osama
-              in Dahab
+              Real experiences from divers who became friends
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Testimonial 1 - German guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  Diving with Osama felt like visiting a friend, not hiring an instructor. He picked us up, we had tea with his family, then explored the Blue Hole together. His father opened Shark Restaurant in 1983 - this family knows Dahab like no one else.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Markus W.</p>
+                    <p className="text-sm text-gray-500">Munich, Germany</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="German flag">🇩🇪</span>
+                    <p className="text-xs text-gray-400 mt-1">Oct 2024</p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Testimonial 2 - British guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  I was nervous about my first open water certification. Osama never rushed me, explained everything twice if needed, and somehow made me feel completely safe 18 meters under. Best decision of my life.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Emma T.</p>
+                    <p className="text-sm text-gray-500">Bristol, UK</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="British flag">🇬🇧</span>
+                    <p className="text-xs text-gray-400 mt-1">Jan 2025</p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Testimonial 3 - American guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  After the dive, Osama took us to his family&apos;s restaurant - Shark. Fresh grilled fish, the Red Sea sparkling in the sunset... I&apos;ve dived all over the world but this was something else. You&apos;re not a tourist here, you&apos;re a guest.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Mike D.</p>
+                    <p className="text-sm text-gray-500">San Diego, USA</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="American flag">🇺🇸</span>
+                    <p className="text-xs text-gray-400 mt-1">Nov 2024</p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Testimonial 4 - French guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  He knows where every Napoleon wrasse hides, which coral shelters the octopus, when the turtles come through. Forty years of family knowledge of these waters - you simply cannot get this from a regular dive shop.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Sophie L.</p>
+                    <p className="text-sm text-gray-500">Lyon, France</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="French flag">🇫🇷</span>
+                    <p className="text-xs text-gray-400 mt-1">Sep 2024</p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Testimonial 5 - Dutch guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  Safety first, always. Osama checked our equipment three times, briefed us thoroughly, and I never once felt uncertain. For a nervous diver like me, that confidence means everything.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Jan V.</p>
+                    <p className="text-sm text-gray-500">Amsterdam, Netherlands</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="Dutch flag">🇳🇱</span>
+                    <p className="text-xs text-gray-400 mt-1">Dec 2024</p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Testimonial 6 - Australian guest */}
+              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">
+                  <svg
+                    className="w-8 h-8 text-[#5a5f4e]/30"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  Did my Advanced cert with Osama. The night dive was incredible - bioluminescence everywhere! But the real highlight was the camel trip to Abu Galum. Bedouin tea, pristine reefs, no crowds. Magical.
+                </blockquote>
+                <div className="border-t pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-gray-900">Rachel K.</p>
+                    <p className="text-sm text-gray-500">Melbourne, Australia</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl" role="img" aria-label="Australian flag">🇦🇺</span>
+                    <p className="text-xs text-gray-400 mt-1">Aug 2024</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* Stories from Fellow Divers */}
+        <section id="stories" className="py-20 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2
+              className="text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
+              style={{ fontFamily: "serif" }}
+            >
+              Stories from Fellow Divers
+            </h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Over the years, I&apos;ve had the privilege of meeting amazing
+              people from around the world who share my love for Dahab&apos;s waters
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, i) => (
+              {divingStories.map((story, i) => (
                 <article
                   key={i}
-                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                  className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, j) => (
+                    {[...Array(story.rating)].map((_, j) => (
                       <svg
                         key={j}
                         className="w-5 h-5 text-yellow-400"
@@ -736,14 +951,14 @@ export default function Home() {
                     ))}
                   </div>
                   <blockquote className="text-gray-700 mb-4 italic">
-                    &ldquo;{testimonial.text}&rdquo;
+                    &ldquo;{story.text}&rdquo;
                   </blockquote>
                   <div className="border-t pt-4">
                     <p className="font-semibold text-gray-900">
-                      {testimonial.name}
+                      {story.name}
                     </p>
                     <p className="text-sm text-gray-500">
-                      {testimonial.country} - {testimonial.course}
+                      {story.country} - {story.experience}
                     </p>
                   </div>
                 </article>
@@ -759,55 +974,96 @@ export default function Home() {
               className="text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
               style={{ fontFamily: "serif" }}
             >
-              Dive Moments from Dahab
+              Diving Adventures & Stories
             </h2>
-            <p className="text-center text-gray-600 mb-12">
-              Glimpses of the underwater world waiting for you
+            <p className="text-center text-gray-600 mb-4 max-w-2xl mx-auto">
+              Moments captured from the underwater paradise of Dahab - from the famous Blue Hole to hidden coral gardens
             </p>
+            <div className="text-center mb-8">
+              <Link
+                href="/gallery"
+                className="inline-flex items-center gap-2 text-[#5a5f4e] font-semibold hover:underline"
+              >
+                View Full Gallery
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {galleryImages.map((image, i) => (
-                <div
+                <Link
                   key={i}
-                  className="relative aspect-square rounded-xl overflow-hidden group"
+                  href="/gallery"
+                  className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer"
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
+                    sizes="(max-width: 768px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="font-bold text-lg">{image.title}</h3>
+                  </div>
+                </Link>
               ))}
+            </div>
+
+            {/* View More CTA */}
+            <div className="mt-10 text-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  href="/gallery"
+                  className="inline-flex items-center justify-center gap-2 bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Explore Full Gallery
+                </Link>
+                <a
+                  href="https://facebook.com/osamasharks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#1877F2] hover:bg-[#1565D8] text-white font-bold py-3 px-6 rounded-full transition-all transform hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                  More on Facebook
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Booking Section */}
-        <section id="book" className="py-20 px-4 bg-[#5a5f4e] text-white">
+        {/* Contact Section */}
+        <section id="contact" className="py-20 px-4 bg-[#5a5f4e] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-4xl md:text-5xl font-light mb-6"
               style={{ fontFamily: "serif" }}
             >
-              Your Dahab Diving Adventure Awaits
+              Let&apos;s Talk About Your Diving Goals
             </h2>
             <p className="text-xl mb-4 text-white/90">
-              I&apos;m currently accepting bookings for the season. Spots fill
-              quickly, especially for Blue Hole experiences and weekend courses.
+              Have questions about diving in Dahab? Want to know which course is
+              right for you? I&apos;m happy to help you plan your underwater adventure.
             </p>
             <p className="text-white/70 mb-8">
-              No deposit required to inquire. I typically respond within a few
-              hours.
+              Send me a message and I typically respond within a few hours.
             </p>
 
-            {/* Booking Options */}
+            {/* Contact Options */}
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {/* WhatsApp - Primary */}
               <a
-                href="https://wa.me/201090208050?text=Hi%20Osama!%20I%20found%20you%20on%20OsamaDives.com%20and%20would%20love%20to%20book%20a%20dive!"
+                href="https://wa.me/201090208050?text=Hi%20Osama!%20I%20found%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20diving%20in%20Dahab!"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-6 px-8 rounded-2xl text-xl transition-all transform hover:scale-105 flex flex-col items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-[#5a5f4e]"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -836,13 +1092,13 @@ export default function Home() {
                 </span>
               </a>
 
-              {/* Cal.com Booking */}
+              {/* Cal.com - For Consultation */}
               <a
                 href="https://cal.com/osama-dives"
                 className="bg-white text-[#5a5f4e] hover:bg-gray-100 font-bold py-6 px-8 rounded-2xl text-xl transition-all transform hover:scale-105 flex flex-col items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e]"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Check available dates on calendar"
+                aria-label="Schedule a consultation call with Osama"
                 onClick={() =>
                   gtag.event({
                     action: "calendar_click",
@@ -866,10 +1122,10 @@ export default function Home() {
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  See Available Dates
+                  Schedule a Chat
                 </div>
                 <span className="text-sm font-normal text-[#5a5f4e]/70">
-                  Check my schedule and pick your time
+                  Let&apos;s discuss your diving plans
                 </span>
               </a>
             </div>
@@ -941,7 +1197,7 @@ export default function Home() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-white/80">Flexible Booking</span>
+                <span className="text-white/80">Flexible Schedule</span>
               </div>
             </div>
 
@@ -1028,22 +1284,17 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image
-                  src="/images/logo_option11_dahab_iconic.png"
-                  alt="Osama Dives Logo"
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-                <span className="text-white font-bold text-xl">OsamaDives</span>
+                <span className="text-white font-bold text-2xl">OsamaDives</span>
+                <span className="text-gray-500 text-sm">• Since 1983</span>
               </div>
               <p className="text-sm mb-4">
-                Professional PADI scuba diving instruction in Dahab, Egypt.
-                Experience the Red Sea with a local expert.
+                Pioneer family since 1983. From the legendary <a href="https://facebook.com/sharkrest.official" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Shark Restaurant</a> to
+                the depths of the Red Sea - Osama&apos;s family has been welcoming guests to Dahab
+                for over 40 years. An ambassador for this magical place.
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://facebook.com/osamadives"
+                  href="https://facebook.com/osamasharks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
@@ -1059,7 +1310,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://instagram.com/osamadives"
+                  href="https://instagram.com/osama_mohamed_hassan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
@@ -1072,6 +1323,23 @@ export default function Home() {
                     aria-hidden="true"
                   >
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://facebook.com/sharkrest.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
+                  aria-label="Visit Shark Restaurant on Facebook"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M11 9H9V7H7v2H5v2h2v7h2v-7h2l.5-2H9V8c0-.55.45-1 1-1h1.5V5H10c-1.66 0-3 1.34-3 3v1z" />
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                   </svg>
                 </a>
               </div>
@@ -1098,26 +1366,42 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="#courses"
+                    href="#experiences"
                     className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
                   >
-                    Diving Courses
+                    Diving Experiences
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#testimonials"
+                    href="#stories"
                     className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
                   >
-                    Reviews
+                    Diver Stories
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#book"
+                    href="/gallery"
                     className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
                   >
-                    Book a Dive
+                    Photo Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
+                  >
+                    Journal
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#contact"
+                    className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white rounded"
+                  >
+                    Contact
                   </Link>
                 </li>
               </ul>
@@ -1162,19 +1446,40 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Legal Disclaimer */}
+          <div className="border-t border-gray-800 pt-8 mb-6">
+            <div className="bg-gray-800/50 rounded-lg p-4 text-xs text-gray-400 max-w-3xl mx-auto">
+              <p className="mb-2">
+                <strong className="text-gray-300">Disclaimer:</strong> This website is a personal portfolio showcasing
+                Osama&apos;s diving experience and credentials. All diving activities, courses, and experiences
+                are conducted through CDWS-registered dive centers in Dahab in full compliance with
+                Egyptian tourism regulations and CDWS (Chamber of Diving and Water Sports) requirements.
+              </p>
+              <p>
+                For diving inquiries and arrangements, please contact Osama directly.
+                This website serves as an informational resource and does not facilitate direct bookings or sales.
+              </p>
+            </div>
+          </div>
+
           <div className="border-t border-gray-800 pt-8 text-center text-sm">
             <p>© 2025 OsamaDives.com - Dahab, South Sinai, Egypt</p>
             <p className="mt-2">
-              CDWS Licensed - PADI Master Scuba Diver Trainer - 15+ Years
-              Experience
+              Pioneer Family Since 1983 | Shark Restaurant Legacy | PADI Master Scuba Diver Trainer
+            </p>
+            <p className="mt-1 text-xs text-gray-500">
+              Personal Blog &amp; Portfolio - Ambassador of Dahab
             </p>
           </div>
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating Heritage Badge - Bottom Left (away from WhatsApp button) */}
+      <FloatingBadge />
+
+      {/* Floating WhatsApp Button - Bottom Right */}
       <a
-        href="https://wa.me/201090208050?text=Hi%20Osama!%20I%20found%20you%20on%20OsamaDives.com%20and%20would%20love%20to%20chat%20about%20diving!"
+        href="https://wa.me/201090208050?text=Hi%20Osama!%20I%20found%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20diving%20in%20Dahab!"
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
         target="_blank"
         rel="noopener noreferrer"
