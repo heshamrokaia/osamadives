@@ -320,7 +320,7 @@ export default function Home() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40 z-10" />
 
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto mt-16">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">
