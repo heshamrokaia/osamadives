@@ -725,7 +725,7 @@ export default function Home() {
                         gtag.event({
                           action: "whatsapp_click",
                           category: "conversion",
-                          label: course.title,
+                          label: experience.title,
                         })
                       }
                     >
