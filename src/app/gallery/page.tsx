@@ -402,7 +402,7 @@ export default function GalleryPage() {
           >
             Through My Lens, Into My Home
           </h1>
-          <p className="text-xl text-white/90 mb-6 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-white/90 mb-6 max-w-2xl mx-auto px-2">
             These are not just photographs - they are invitations. Each image holds a story
             from waters I have known since childhood, dive sites I have memorized like old friends,
             and moments of wonder I have been privileged to witness and share.
@@ -797,23 +797,23 @@ export default function GalleryPage() {
 
           {/* Image Container - Wider for stories */}
           <div
-            className={`mx-4 relative ${currentPhoto.story ? 'max-w-6xl flex flex-col lg:flex-row gap-4 items-start' : 'max-w-5xl max-h-[85vh]'}`}
+            className={`mx-4 relative ${currentPhoto.story ? 'max-w-6xl flex flex-col lg:flex-row gap-4 items-start max-h-[90vh] overflow-y-auto' : 'max-w-5xl max-h-[85vh]'}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className={currentPhoto.story ? 'lg:flex-shrink-0' : ''}>
+            <div className={currentPhoto.story ? 'lg:flex-shrink-0 flex-shrink-0' : ''}>
               <Image
                 src={currentPhoto.src}
                 alt={currentPhoto.alt}
                 width={1200}
                 height={800}
-                className={`${currentPhoto.story ? 'max-h-[60vh] lg:max-h-[70vh] lg:max-w-[600px]' : 'max-h-[75vh]'} w-auto h-auto object-contain rounded-lg`}
+                className={`${currentPhoto.story ? 'max-h-[40vh] lg:max-h-[70vh] lg:max-w-[600px]' : 'max-h-[75vh]'} w-auto h-auto object-contain rounded-lg`}
                 priority
               />
             </div>
 
             {/* Extended Story Panel (for photos with stories) */}
             {currentPhoto.story && (
-              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-6 lg:max-w-md lg:max-h-[70vh] lg:overflow-y-auto">
+              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4 sm:p-6 lg:max-w-md lg:max-h-[70vh] lg:overflow-y-auto">
                 <div className="flex items-center gap-2 mb-3">
                   <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />

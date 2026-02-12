@@ -537,16 +537,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: 'diving',
     tags: ['wreck', 'thistlegorm', 'iconic']
   },
-  {
-    id: 'gallery-tanked-up',
-    src: '/images/gallery/diving/whatsapp-image-2025-05-05-at-16.48.19.jpeg',
-    alt: 'Technical diver Ahmed Gabr with multiple tanks underwater',
-    title: 'Tanked Up',
-    description: 'Technical diving takes gear to another level - multiple tanks for the deepest dives.',
-    location: 'Red Sea, Egypt',
-    category: 'diving',
-    tags: ['technical', 'tanks', 'deep']
-  },
 
   // === NEW GALLERY IMAGES - TEACHING ===
   {
