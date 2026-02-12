@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import {
   galleryPhotos,
   getCategories,
@@ -24,6 +24,110 @@ import FloatingBadge from "@/components/FloatingBadge";
 
 // Tab options for the gallery
 type GalleryTab = "photos" | "stories" | "videos";
+
+// Hook for intersection observer based scroll-reveal
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(node);
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.unobserve(node);
+  }, []);
+
+  return { ref, isVisible };
+}
+
+// Individual gallery item with scroll-reveal
+function GalleryItem({
+  photo,
+  index,
+  onOpenLightbox,
+}: {
+  photo: (typeof galleryPhotos)[number];
+  index: number;
+  onOpenLightbox: (index: number) => void;
+}) {
+  const { ref, isVisible } = useScrollReveal();
+
+  return (
+    <div
+      ref={ref}
+      className={`break-inside-avoid mb-4 group cursor-pointer transition-all duration-700 ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: `${(index % 4) * 100}ms` }}
+      onClick={() => onOpenLightbox(index)}
+    >
+      <div className="relative overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-xl transition-shadow duration-300">
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          width={600}
+          height={400}
+          className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          <h3 className="font-bold text-lg">{photo.title}</h3>
+          {photo.location && (
+            <p className="text-sm text-white/80 flex items-center gap-1">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              {photo.location}
+            </p>
+          )}
+        </div>
+        {photo.featured && (
+          <div className="absolute top-3 right-3 bg-[#5a5f4e] text-white text-xs font-bold px-2 py-1 rounded">
+            FEATURED
+          </div>
+        )}
+        {photo.story && (
+          <div className="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
+            </svg>
+            STORY
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<GalleryTab>("photos");
@@ -412,66 +516,39 @@ export default function GalleryPage() {
             ))}
           </div>
 
+          {/* Photo Counter */}
+          <div className="text-center mb-6">
+            <p className="text-sm text-gray-500">
+              Showing{" "}
+              <span className="font-semibold text-gray-700">
+                {filteredPhotos.length}
+              </span>{" "}
+              of{" "}
+              <span className="font-semibold text-gray-700">
+                {galleryPhotos.length}
+              </span>{" "}
+              photos
+              {selectedCategory !== "all" && (
+                <span>
+                  {" "}
+                  in{" "}
+                  <span className="font-semibold text-[#5a5f4e]">
+                    {categoryLabels[selectedCategory as keyof typeof categoryLabels]}
+                  </span>
+                </span>
+              )}
+            </p>
+          </div>
+
           {/* Masonry Grid */}
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
             {filteredPhotos.map((photo, index) => (
-              <div
+              <GalleryItem
                 key={photo.id}
-                className="break-inside-avoid mb-4 group cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <div className="relative overflow-hidden rounded-xl bg-gray-100">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-bold text-lg">{photo.title}</h3>
-                    {photo.location && (
-                      <p className="text-sm text-white/80 flex items-center gap-1">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                        </svg>
-                        {photo.location}
-                      </p>
-                    )}
-                  </div>
-                  {photo.featured && (
-                    <div className="absolute top-3 right-3 bg-[#5a5f4e] text-white text-xs font-bold px-2 py-1 rounded">
-                      FEATURED
-                    </div>
-                  )}
-                  {photo.story && (
-                    <div className="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-                      </svg>
-                      STORY
-                    </div>
-                  )}
-                </div>
-              </div>
+                photo={photo}
+                index={index}
+                onOpenLightbox={openLightbox}
+              />
             ))}
           </div>
           </>

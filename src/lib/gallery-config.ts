@@ -29,7 +29,7 @@ export interface GalleryPhoto {
   };
   date?: string;
   featured?: boolean;
-  category: 'diving' | 'underwater' | 'marine-life' | 'dive-sites' | 'training' | 'adventures' | 'stories' | 'heritage';
+  category: 'diving' | 'underwater' | 'marine-life' | 'dive-sites' | 'training' | 'adventures' | 'stories' | 'heritage' | 'team' | 'dahab' | 'equipment';
   tags?: string[];
   /** Extended narrative for photos with stories - shown in lightbox */
   story?: string;
@@ -368,6 +368,791 @@ export const galleryPhotos: GalleryPhoto[] = [
     coordinates: { lat: 28.5000, lng: 34.5167 },
     category: 'diving',
     tags: ['group', 'community', 'friends']
+  },
+
+  // === NEW GALLERY IMAGES - DIVING ===
+  {
+    id: 'gallery-canyon-silhouette',
+    src: '/images/gallery/diving/osamdives_the_canyon.jpeg',
+    alt: 'Diver silhouette ascending through The Canyon narrow gap with sunlight streaming in',
+    title: 'The Canyon Ascent',
+    description: 'Looking up through the narrow walls of The Canyon as a diver ascends toward the light.',
+    location: 'The Canyon, Dahab',
+    coordinates: { lat: 28.4847, lng: 34.5189 },
+    featured: true,
+    category: 'diving',
+    tags: ['canyon', 'silhouette', 'underwater']
+  },
+  {
+    id: 'gallery-osama-coral-reef',
+    src: '/images/gallery/diving/fb_img_1633902371206.jpeg',
+    alt: 'Osama diving over vibrant coral reef, professional underwater photo',
+    title: 'Reef Explorer',
+    description: 'Gliding over the reef gardens that have been my office for decades.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'diving',
+    tags: ['osama', 'coral', 'underwater']
+  },
+  {
+    id: 'gallery-canyon-pose',
+    src: '/images/gallery/diving/fb_img_1636476791947.jpeg',
+    alt: 'Diver posing in underwater cave with dramatic blue light, Cressi gear',
+    title: 'Cathedral of Blue',
+    description: 'The caves and canyons of Dahab create underwater cathedrals of light.',
+    location: 'The Canyon, Dahab',
+    coordinates: { lat: 28.4847, lng: 34.5189 },
+    featured: true,
+    category: 'diving',
+    tags: ['canyon', 'cave', 'underwater']
+  },
+  {
+    id: 'gallery-giant-stride',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-01-at-16.20.55.jpeg',
+    alt: 'Diver doing giant stride entry off dock into crystal clear water',
+    title: 'The Giant Stride',
+    description: 'That exhilarating moment of the giant stride entry into the Red Sea.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'diving',
+    tags: ['entry', 'dock', 'action']
+  },
+  {
+    id: 'gallery-wreck-truck',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-08-at-15.46.36-1.jpeg',
+    alt: 'Coral-encrusted truck inside SS Thistlegorm shipwreck',
+    title: 'Trucks of the Thistlegorm',
+    description: 'WWII military vehicles still rest inside the SS Thistlegorm wreck, now covered in coral.',
+    location: 'SS Thistlegorm, Red Sea',
+    category: 'diving',
+    tags: ['wreck', 'thistlegorm', 'history']
+  },
+  {
+    id: 'gallery-wreck-motorcycle',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-08-at-15.46.38.jpeg',
+    alt: 'Coral-encrusted BSA motorcycle inside SS Thistlegorm shipwreck',
+    title: 'Frozen in Time',
+    description: 'A WWII motorcycle preserved on the ocean floor inside the SS Thistlegorm.',
+    location: 'SS Thistlegorm, Red Sea',
+    featured: true,
+    category: 'diving',
+    tags: ['wreck', 'thistlegorm', 'motorcycle']
+  },
+  {
+    id: 'gallery-wreck-tires',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-08-at-15.46.39-1.jpeg',
+    alt: 'Military tires inside SS Thistlegorm cargo hold',
+    title: 'Cargo Hold Discovery',
+    description: 'Military supply tires still stacked in the cargo hold, 80 years underwater.',
+    location: 'SS Thistlegorm, Red Sea',
+    category: 'diving',
+    tags: ['wreck', 'thistlegorm', 'cargo']
+  },
+  {
+    id: 'gallery-wreck-machinery',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-08-at-15.48.20.jpeg',
+    alt: 'Coral-covered equipment and bottles inside shipwreck',
+    title: 'Relics of the Deep',
+    description: 'Every artifact tells a story of the ship and its crew from another era.',
+    location: 'SS Thistlegorm, Red Sea',
+    category: 'diving',
+    tags: ['wreck', 'artifacts']
+  },
+  {
+    id: 'gallery-eagle-ray',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.37-1.jpeg',
+    alt: 'Diver swimming alongside a spotted eagle ray in the Red Sea',
+    title: 'Dance with an Eagle Ray',
+    description: 'A magical encounter with a spotted eagle ray gliding through the blue.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'diving',
+    tags: ['eagle-ray', 'marine-life', 'encounter']
+  },
+  {
+    id: 'gallery-coral-pinnacle',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.37-2.jpeg',
+    alt: 'Colorful coral reef pinnacle with vibrant hard and soft corals',
+    title: 'Coral Pinnacle',
+    description: 'A towering pinnacle of colorful corals reaching toward the surface.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'diving',
+    tags: ['coral', 'reef', 'colorful']
+  },
+  {
+    id: 'gallery-turtle-birthday',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.42-1.jpeg',
+    alt: 'Diver holding Happy Birthday Osama sign next to sea turtle underwater',
+    title: 'Birthday with a Turtle',
+    description: 'Even the sea turtles came to celebrate! A birthday surprise underwater.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'diving',
+    tags: ['turtle', 'birthday', 'celebration']
+  },
+  {
+    id: 'gallery-canyon-cressi',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.50-1.jpeg',
+    alt: 'Diver in Cressi wetsuit posing in underwater canyon with dramatic blue light',
+    title: 'Deep in The Canyon',
+    description: 'The walls of The Canyon frame a world of deep blue and silence.',
+    location: 'The Canyon, Dahab',
+    coordinates: { lat: 28.4847, lng: 34.5189 },
+    category: 'diving',
+    tags: ['canyon', 'cressi', 'underwater']
+  },
+  {
+    id: 'gallery-osama-shaka',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.51-1.jpeg',
+    alt: 'Osama diving in shallow water doing shaka signs, professional photo by Pawel Ciecheslki',
+    title: 'Good Vibes Only',
+    description: 'Spreading the diving spirit with shaka signs in Dahab\'s crystal waters.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'diving',
+    tags: ['osama', 'portrait', 'shaka']
+  },
+  {
+    id: 'gallery-osama-emerging',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-10-at-12.58.52-2.jpeg',
+    alt: 'Osama emerging from the water in full dive gear with mountains in background',
+    title: 'Between the Worlds',
+    description: 'Emerging from the deep blue into the warm Sinai sun.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'diving',
+    tags: ['osama', 'portrait', 'surface']
+  },
+  {
+    id: 'gallery-thistlegorm-wreck',
+    src: '/images/gallery/diving/ss-thistlegorm-wreck-day.webp',
+    alt: 'Divers exploring the massive SS Thistlegorm shipwreck exterior',
+    title: 'SS Thistlegorm',
+    description: 'The legendary WWII wreck - one of the world\'s most famous dive sites.',
+    location: 'SS Thistlegorm, Red Sea',
+    featured: true,
+    category: 'diving',
+    tags: ['wreck', 'thistlegorm', 'iconic']
+  },
+  {
+    id: 'gallery-tanked-up',
+    src: '/images/gallery/diving/whatsapp-image-2025-05-05-at-16.48.19.jpeg',
+    alt: 'Technical diver Ahmed Gabr with multiple tanks underwater',
+    title: 'Tanked Up',
+    description: 'Technical diving takes gear to another level - multiple tanks for the deepest dives.',
+    location: 'Red Sea, Egypt',
+    category: 'diving',
+    tags: ['technical', 'tanks', 'deep']
+  },
+
+  // === NEW GALLERY IMAGES - TEACHING ===
+  {
+    id: 'gallery-teaching-shallows',
+    src: '/images/gallery/teaching/fb_img_1595137616968jpg.0.jpeg',
+    alt: 'Osama helping a student in shallow water while children watch from shore',
+    title: 'Learning in the Shallows',
+    description: 'Every great diver started in the shallows. Guiding the next generation.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'training',
+    tags: ['teaching', 'beginners', 'shallows']
+  },
+  {
+    id: 'gallery-group-entry',
+    src: '/images/gallery/teaching/fb_img_1623632282122.jpeg',
+    alt: 'Group of divers with full gear entering the water for training dive',
+    title: 'Into the Blue Together',
+    description: 'A group of students entering the water for their training dive.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'training',
+    tags: ['group', 'training', 'entry']
+  },
+  {
+    id: 'gallery-padi-certification',
+    src: '/images/gallery/teaching/fb_img_1628920514141.jpeg',
+    alt: 'Osama with two students holding PADI certificates at Planet Divers',
+    title: 'Certified Divers',
+    description: 'Two more divers certified! Proud moments at Planet Divers, Dahab.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'training',
+    tags: ['padi', 'certification', 'students']
+  },
+  {
+    id: 'gallery-teaching-child',
+    src: '/images/gallery/teaching/whatsapp-image-2025-05-10-at-12.58.41-1.jpeg',
+    alt: 'Young Osama helping a child put on dive gear',
+    title: 'Starting Young',
+    description: 'Teaching the youngest adventurers to love the sea, one bubble at a time.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2012-05-02',
+    category: 'training',
+    tags: ['kids', 'teaching', 'heritage']
+  },
+  {
+    id: 'gallery-young-student',
+    src: '/images/gallery/teaching/whatsapp-image-2025-05-10-at-12.58.44-1.jpeg',
+    alt: 'Osama in wetsuit with young boy student at Planet Divers, both doing OK sign',
+    title: 'Future Diver',
+    description: 'A young diver earns his OK sign at Planet Divers.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'training',
+    tags: ['kids', 'student', 'planet-divers']
+  },
+  {
+    id: 'gallery-student-ok-sign',
+    src: '/images/gallery/teaching/whatsapp-image-2025-05-10-at-12.58.46-1.jpeg',
+    alt: 'Osama with female student in full dive gear in the water, both doing OK sign',
+    title: 'All OK!',
+    description: 'Instructor and student - the universal OK sign means confidence underwater.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'training',
+    tags: ['student', 'ok-sign', 'cressi']
+  },
+  {
+    id: 'gallery-student-gearup',
+    src: '/images/gallery/teaching/whatsapp-image-2025-05-10-at-12.58.47-1.jpeg',
+    alt: 'Osama with female student in dive gear at Blue Hole area',
+    title: 'Ready for the Blue Hole',
+    description: 'Geared up and ready for an unforgettable dive at the Blue Hole.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    category: 'training',
+    tags: ['student', 'blue-hole', 'preparation']
+  },
+  {
+    id: 'gallery-dive-group-rocks',
+    src: '/images/gallery/teaching/whatsapp-image-2025-05-10-at-12.58.48-1.jpeg',
+    alt: 'Large group of divers preparing at rocky shore dive site near Blue Hole',
+    title: 'Shore Diving Preparation',
+    description: 'A busy day at the dive site - groups preparing for their underwater adventure.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    category: 'training',
+    tags: ['group', 'shore-diving', 'preparation']
+  },
+
+  // === NEW GALLERY IMAGES - TEAM ===
+  {
+    id: 'gallery-team-dock',
+    src: '/images/gallery/team/fb_img_1611744727736.jpeg',
+    alt: 'Three divers posing on dock with AwesomeTeam hashtag',
+    title: 'Awesome Team',
+    description: 'The OsamaDives crew ready for another day of underwater adventures.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['team', 'dock', 'crew']
+  },
+  {
+    id: 'gallery-blue-hole-viewpoint',
+    src: '/images/gallery/team/fb_img_1617712455291.jpeg',
+    alt: 'Group selfie at Blue Hole viewpoint overlooking the sea',
+    title: 'Blue Hole Views',
+    description: 'Team selfie at the iconic Blue Hole viewpoint.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    category: 'team',
+    tags: ['blue-hole', 'selfie', 'viewpoint']
+  },
+  {
+    id: 'gallery-osama-cressi',
+    src: '/images/gallery/team/fb_img_1625154408370.jpeg',
+    alt: 'Osama in Cressi wetsuit with two happy divers under beach shelter',
+    title: 'Post-Dive Smiles',
+    description: 'Nothing beats the smiles after a great dive in Dahab.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['osama', 'cressi', 'post-dive']
+  },
+  {
+    id: 'gallery-dahab-dive-team',
+    src: '/images/gallery/team/fb_img_1625492173636.jpeg',
+    alt: 'Large group on dive boat wearing Dahab Dive Team shirts',
+    title: 'Dahab Dive Team',
+    description: 'The full Dahab Dive Team assembled on the boat.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'team',
+    tags: ['team', 'boat', 'group']
+  },
+  {
+    id: 'gallery-boat-selfie',
+    src: '/images/gallery/team/img-20211019-082453.jpeg',
+    alt: 'Osama selfie with young man on dive boat, turquoise water',
+    title: 'Boat Day',
+    description: 'Every boat trip is a new adventure with great company.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-10-19',
+    category: 'team',
+    tags: ['boat', 'selfie', 'sea']
+  },
+  {
+    id: 'gallery-dive-center-group',
+    src: '/images/gallery/team/img-20211109-135119.jpeg',
+    alt: 'Group of divers and instructors posing at dive center',
+    title: 'Dive Center Family',
+    description: 'Guests and instructors - everyone is family at the dive center.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-09',
+    category: 'team',
+    tags: ['group', 'dive-center', 'family']
+  },
+  {
+    id: 'gallery-hunts-dive-shop',
+    src: '/images/gallery/team/img-20211128-095042.jpeg',
+    alt: 'Osama in full dive gear with friend at dive center, tanks visible',
+    title: 'Diving Brothers',
+    description: 'The diving community spans the globe - connections forged underwater.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-28',
+    category: 'team',
+    tags: ['friends', 'gear', 'dive-center']
+  },
+  {
+    id: 'gallery-promenade-selfie',
+    src: '/images/gallery/team/whatsapp-image-2025-05-05-at-16.45.48.jpeg',
+    alt: 'Group selfie on Dahab promenade with beach behind',
+    title: 'Dahab Promenade',
+    description: 'Friends gathered on the beautiful Dahab waterfront promenade.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['promenade', 'friends', 'dahab']
+  },
+  {
+    id: 'gallery-boat-trio',
+    src: '/images/gallery/team/whatsapp-image-2025-05-10-at-12.58.36-1.jpeg',
+    alt: 'Three guys selfie on boat with Dahab coast behind',
+    title: 'Crew on the Water',
+    description: 'Heading out for another dive trip along the Sinai coast.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['boat', 'crew', 'coast']
+  },
+  {
+    id: 'gallery-planet-divers-selfie',
+    src: '/images/gallery/team/whatsapp-image-2025-05-10-at-12.58.44-2.jpeg',
+    alt: 'Osama selfie with friend at Planet Divers center',
+    title: 'Planet Divers',
+    description: 'At the heart of Dahab\'s diving community.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['planet-divers', 'selfie', 'dahab']
+  },
+  {
+    id: 'gallery-dive-club-van',
+    src: '/images/gallery/team/whatsapp-image-2025-05-10-at-12.58.45-1.jpeg',
+    alt: 'Group of divers in wetsuits posing by dive club van at beach with gear',
+    title: 'Ready to Dive',
+    description: 'The team assembled with gear laid out - ready for an expedition.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['team', 'van', 'gear', 'expedition']
+  },
+  {
+    id: 'gallery-big-team-photo',
+    src: '/images/gallery/team/whatsapp-image-2025-05-10-at-13.03.22.jpeg',
+    alt: 'Large group of 25+ divers in wetsuits posing at desert dive site shelter',
+    title: 'The Full Team',
+    description: 'An epic gathering of divers from around the world in Dahab.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'team',
+    tags: ['team', 'large-group', 'desert']
+  },
+  {
+    id: 'gallery-osama-beach-friends',
+    src: '/images/gallery/team/fb_img_1619885729926.jpeg',
+    alt: 'Osama selfie with two friends at the beach',
+    title: 'Beach Vibes',
+    description: 'Sun, sea, and great company in Dahab.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['beach', 'friends', 'selfie']
+  },
+  {
+    id: 'gallery-team-wetsuits',
+    src: '/images/gallery/team/fb_img_1619885733450.jpeg',
+    alt: 'Group of divers in wetsuits posing in Dahab town',
+    title: 'Suited Up',
+    description: 'The crew suited up and ready to explore.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'team',
+    tags: ['team', 'wetsuits', 'town']
+  },
+
+  // === NEW GALLERY IMAGES - DAHAB ===
+  {
+    id: 'gallery-desert-road',
+    src: '/images/gallery/dahab/fb_img_1618932010952.jpeg',
+    alt: 'Three people posing on desert road in Sinai',
+    title: 'Desert Roads',
+    description: 'The scenic desert roads of Sinai leading to hidden dive sites.',
+    location: 'Sinai, Egypt',
+    category: 'dahab',
+    tags: ['desert', 'road', 'sinai']
+  },
+  {
+    id: 'gallery-bedouin-road',
+    src: '/images/gallery/dahab/fb_img_1618932017418.jpeg',
+    alt: 'Cars and Bedouin on desert road in Sinai',
+    title: 'Sinai Journey',
+    description: 'Traveling through the ancient Sinai landscape.',
+    location: 'Sinai, Egypt',
+    category: 'dahab',
+    tags: ['desert', 'bedouin', 'travel']
+  },
+  {
+    id: 'gallery-dahab-coastline',
+    src: '/images/gallery/dahab/fb_img_1625492151580.jpeg',
+    alt: 'Group posing on hilltop overlooking Dahab coastline and turquoise sea',
+    title: 'Dahab from Above',
+    description: 'The stunning Dahab coastline viewed from the surrounding hills.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'dahab',
+    tags: ['coastline', 'panorama', 'viewpoint']
+  },
+  {
+    id: 'gallery-planet-divers-front',
+    src: '/images/gallery/dahab/fb_img_1632056756922.jpeg',
+    alt: 'Osama selfie at Planet Divers entrance with crowd',
+    title: 'Planet Divers Hub',
+    description: 'The bustling entrance of Planet Divers dive center.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'dahab',
+    tags: ['planet-divers', 'dive-center', 'dahab']
+  },
+  {
+    id: 'gallery-birthday-hug',
+    src: '/images/gallery/dahab/img-20211110-150513.jpeg',
+    alt: 'Osama hugging friend wearing Scary Happy Birthday shirt in Bedouin hut',
+    title: 'Birthday in Dahab',
+    description: 'Celebrating birthdays the Dahab way - with friends and big hugs.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-10',
+    category: 'dahab',
+    tags: ['birthday', 'friends', 'celebration']
+  },
+  {
+    id: 'gallery-birthday-plate',
+    src: '/images/gallery/dahab/img-20211110-155127.jpeg',
+    alt: 'Hand-painted birthday plate with fish designs and Dahab text',
+    title: 'Dahab Birthday Art',
+    description: 'A hand-painted birthday plate - Dahab style with fish and diving motifs.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-10',
+    category: 'dahab',
+    tags: ['art', 'birthday', 'handmade']
+  },
+  {
+    id: 'gallery-seafood-dinner',
+    src: '/images/gallery/dahab/img-20211204-195856.jpeg',
+    alt: 'Two men dining at seafood restaurant with fish mural and shrimp display',
+    title: 'Dahab Seafood',
+    description: 'Fresh seafood dinners in Dahab\'s colorful restaurants.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-12-04',
+    category: 'dahab',
+    tags: ['food', 'restaurant', 'seafood']
+  },
+  {
+    id: 'gallery-bedouin-shelter',
+    src: '/images/gallery/dahab/wahsh-img-1452.jpeg',
+    alt: 'Group relaxing in Bedouin beach shelter between dives',
+    title: 'Bedouin Beach Life',
+    description: 'Relaxing between dives in a traditional Bedouin beach shelter.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'dahab',
+    tags: ['bedouin', 'beach', 'relaxation']
+  },
+  {
+    id: 'gallery-blue-hole-cliff',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-12.58.35-1.jpeg',
+    alt: 'Man at Blue Hole area with turquoise water and desert mountains',
+    title: 'Blue Hole Lookout',
+    description: 'The incredible turquoise waters of the Blue Hole from above.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    category: 'dahab',
+    tags: ['blue-hole', 'mountains', 'turquoise']
+  },
+  {
+    id: 'gallery-sinai-landscape',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-12.58.38-1.jpeg',
+    alt: 'Osama standing in Sinai desert landscape',
+    title: 'Sinai Spirit',
+    description: 'The vast Sinai desert - where Osama\'s family roots began.',
+    location: 'Sinai, Egypt',
+    category: 'dahab',
+    tags: ['sinai', 'desert', 'landscape']
+  },
+  {
+    id: 'gallery-dive-site-shelter',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-12.58.49-1.jpeg',
+    alt: 'Desert dive site shelter structure in Sinai landscape',
+    title: 'Desert Dive Site',
+    description: 'Where the desert meets the sea - a typical Dahab dive site.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'dahab',
+    tags: ['dive-site', 'desert', 'shelter']
+  },
+  {
+    id: 'gallery-between-dives-hut',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-12.58.49-2.jpeg',
+    alt: 'Group relaxing in Bedouin hut between dives, dive map on wall',
+    title: 'Between Dives',
+    description: 'Sharing stories and planning the next dive in the shade.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'dahab',
+    tags: ['bedouin', 'rest', 'social']
+  },
+  {
+    id: 'gallery-blue-hole-railing',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-12.58.50-2.jpeg',
+    alt: 'Osama and friend sitting on railing overlooking Blue Hole from above',
+    title: 'Blue Hole Panorama',
+    description: 'Taking in the view from above the famous Blue Hole.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    category: 'dahab',
+    tags: ['blue-hole', 'panorama', 'friends']
+  },
+  {
+    id: 'gallery-group-dinner',
+    src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-13.03.17-1.jpeg',
+    alt: 'Large group dinner at colorful Dahab restaurant with lanterns',
+    title: 'Dahab Nights',
+    description: 'After-dive dinners are when the best stories come to life.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'dahab',
+    tags: ['dinner', 'restaurant', 'nightlife']
+  },
+
+  // === NEW GALLERY IMAGES - HERITAGE ===
+  {
+    id: 'gallery-trimix-cert',
+    src: '/images/gallery/heritage/img-20211107-075545.jpeg',
+    alt: 'IANTD Normoxic Trimix Diver Max Depth 60 MSW certificate for Osama Rokaia',
+    title: 'Trimix Certification',
+    description: 'IANTD Normoxic Trimix Diver certification - pushing the limits to 60 meters.',
+    location: 'Dahab, Egypt',
+    date: '2021-06-04',
+    category: 'heritage',
+    tags: ['certificate', 'trimix', 'iantd', 'technical']
+  },
+  {
+    id: 'gallery-cert-handover',
+    src: '/images/gallery/heritage/img-20211107-075658.jpeg',
+    alt: 'Osama receiving Trimix certificate from instructor',
+    title: 'Achievement Unlocked',
+    description: 'Receiving the advanced Trimix diving certification from the instructor.',
+    location: 'Dahab, Egypt',
+    date: '2021-11-07',
+    category: 'heritage',
+    tags: ['certificate', 'instructor', 'achievement']
+  },
+  {
+    id: 'gallery-vintage-photo',
+    src: '/images/gallery/heritage/img-20211228-074905.jpeg',
+    alt: 'Vintage photo of young Osama holding a child with friends in Dahab',
+    title: 'The Early Days',
+    description: 'A precious photo from the early days in Dahab - memories that shaped a lifetime.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    featured: true,
+    category: 'heritage',
+    tags: ['vintage', 'family', 'history']
+  },
+  {
+    id: 'gallery-thank-you-note',
+    src: '/images/gallery/heritage/whatsapp-image-2025-05-10-at-12.58.39.jpeg',
+    alt: 'Handwritten thank you note: Dear Osama, thank you for being the best dive instructor - Matyas',
+    title: 'Best Dive Instructor',
+    description: 'Words from a student that mean more than any certificate.',
+    location: 'Dahab, Egypt',
+    category: 'heritage',
+    tags: ['testimonial', 'note', 'student']
+  },
+  {
+    id: 'gallery-advanced-trimix-cert',
+    src: '/images/gallery/heritage/whatsapp-image-2025-05-10-at-12.58.48-2.jpeg',
+    alt: 'Osama proudly holding IANTD Advanced Rec. Trimix Diver certificate',
+    title: 'Advanced Technical Diver',
+    description: 'Osama proudly showing his Advanced Trimix Diver certification.',
+    location: 'Dahab, Egypt',
+    category: 'heritage',
+    tags: ['certificate', 'trimix', 'advanced']
+  },
+  {
+    id: 'gallery-photography-calendar',
+    src: '/images/gallery/heritage/whatsapp-image-2025-05-10-at-12.58.51-2.jpeg',
+    alt: 'Underwater photography calendar 2020 and dive marker labeled Each Day Better Osama',
+    title: 'Each Day Better',
+    description: 'A personal motto and a collection of underwater photography memories.',
+    location: 'Dahab, Egypt',
+    category: 'heritage',
+    tags: ['photography', 'motto', 'memories']
+  },
+  {
+    id: 'gallery-iantd-card',
+    src: '/images/gallery/heritage/whatsapp-image-2025-05-10-at-12.58.52-3.jpeg',
+    alt: 'IANTD digital certification card for Osama Rokaia - Normoxic Trimix Diver',
+    title: 'IANTD Diver Card',
+    description: 'The official IANTD certification card - passport to the deep.',
+    location: 'Dahab, Egypt',
+    category: 'heritage',
+    tags: ['iantd', 'card', 'certification']
+  },
+
+  // === NEW GALLERY IMAGES - EQUIPMENT ===
+  {
+    id: 'gallery-gear-prep',
+    src: '/images/gallery/equipment/fb_img_1619016170986.jpeg',
+    alt: 'Group preparing and checking dive gear under beach shelter',
+    title: 'Gear Check',
+    description: 'Safety first - thorough gear preparation before every dive.',
+    location: 'Dahab, Egypt',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'equipment',
+    tags: ['gear', 'preparation', 'safety']
+  },
+  {
+    id: 'gallery-trimix-tank',
+    src: '/images/gallery/equipment/whatsapp-image-2025-05-10-at-12.58.43-1.jpeg',
+    alt: 'Trimix tank labeled OSAMA with ScubaTec Dahab sticker, MOD 52m',
+    title: 'Osama\'s Trimix Tank',
+    description: 'A personal Trimix tank configured for 52-meter maximum operating depth.',
+    location: 'Dahab, Egypt',
+    category: 'equipment',
+    tags: ['trimix', 'tank', 'technical']
+  },
+  {
+    id: 'gallery-bcd-check',
+    src: '/images/gallery/equipment/whatsapp-image-2025-05-10-at-12.58.50-3.jpeg',
+    alt: 'Osama checking BCD equipment at beach before dive',
+    title: 'Pre-Dive Ritual',
+    description: 'Every dive starts with a careful equipment check at the beach.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    category: 'equipment',
+    tags: ['bcd', 'check', 'pre-dive']
+  },
+
+  // === NEW GALLERY IMAGES - STORIES (Underwater Proposal) ===
+  {
+    id: 'gallery-proposal-note',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.16.jpeg',
+    alt: 'Marriage proposal note with engagement ring: Czy zostaniesz moja zona (Will you be my wife)',
+    title: 'A Question from the Heart',
+    description: 'The beginning of an underwater love story - a ring and a question.',
+    location: 'Dahab, Egypt',
+    date: '2021-11-04',
+    category: 'stories',
+    tags: ['proposal', 'love', 'ring'],
+    story: 'In November 2021, Kuba asked me to help him plan something extraordinary - an underwater marriage proposal to his girlfriend Kasia. We prepared the waterproof card with the Polish words "Czy zostaniesz moja zona?" - "Will you be my wife?" It was one of the most beautiful moments I have ever been part of underwater.'
+  },
+  {
+    id: 'gallery-proposal-underwater',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.19.jpeg',
+    alt: 'Two divers at coral reef during underwater marriage proposal',
+    title: 'The Underwater Proposal',
+    description: 'The moment Kuba proposed to Kasia on the coral reef, 15 meters below the surface.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-04',
+    featured: true,
+    category: 'stories',
+    tags: ['proposal', 'underwater', 'love'],
+    story: 'At 15 meters depth, surrounded by the beauty of the Red Sea reef, Kuba reached for the waterproof card. Kasia\'s eyes went wide behind her mask. Even underwater, you could see the tears of joy mixing with the sea. She nodded yes before he even finished showing the card. The fish around us seemed to celebrate too.'
+  },
+  {
+    id: 'gallery-proposal-card-underwater',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.21-1.jpeg',
+    alt: 'Diver holding Polish marriage proposal card underwater with thumbs up',
+    title: 'She Said Yes!',
+    description: 'Kuba showing the proposal card underwater - and she said yes!',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-04',
+    category: 'stories',
+    tags: ['proposal', 'yes', 'celebration']
+  },
+  {
+    id: 'gallery-engagement-ring-underwater',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.21.jpeg',
+    alt: 'Female diver underwater showing engagement ring on her hand with OK sign',
+    title: 'Ring of the Deep',
+    description: 'Kasia showing off her new engagement ring underwater - the most unique proposal ever!',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-04',
+    featured: true,
+    category: 'stories',
+    tags: ['ring', 'engagement', 'underwater']
+  },
+  {
+    id: 'gallery-proposal-collage',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.18.jpeg',
+    alt: 'Four-photo collage of underwater proposal: card, dive, ring, Blue Hole view',
+    title: 'Love Story in Four Frames',
+    description: 'The complete underwater proposal story - from the note to the ring to the Blue Hole.',
+    location: 'Blue Hole, Dahab',
+    coordinates: { lat: 28.5722, lng: 34.5381 },
+    date: '2021-11-04',
+    category: 'stories',
+    tags: ['collage', 'proposal', 'love-story']
+  },
+  {
+    id: 'gallery-proposal-facebook',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.20-1.jpeg',
+    alt: 'Osama Facebook post congratulating Kuba and Kasia on underwater proposal',
+    title: 'Congratulations Kuba & Kasia',
+    description: 'Osama celebrating the engagement of Kuba and Kasia after the dive.',
+    location: 'Dahab, Egypt',
+    date: '2021-11-04',
+    category: 'stories',
+    tags: ['congratulations', 'couple', 'celebration']
+  },
+  {
+    id: 'gallery-proposal-reef',
+    src: '/images/gallery/stories/whatsapp-image-2025-05-10-at-13.03.20.jpeg',
+    alt: 'Two divers at the coral reef placing the proposal note during underwater engagement',
+    title: 'A Reef to Remember',
+    description: 'The coral reef where two lives became one - an unforgettable moment.',
+    location: 'Dahab, Red Sea',
+    coordinates: { lat: 28.5000, lng: 34.5167 },
+    date: '2021-11-04',
+    category: 'stories',
+    tags: ['reef', 'proposal', 'moment']
   }
 ];
 
@@ -396,7 +1181,10 @@ export const categoryLabels: Record<GalleryPhoto['category'], string> = {
   'marine-life': 'Marine Life',
   'dive-sites': 'Famous Dive Sites',
   'training': 'Diving Experiences',
-  'adventures': 'Desert & Sea Adventures'
+  'adventures': 'Desert & Sea Adventures',
+  'team': 'The Dive Team',
+  'dahab': 'Life in Dahab',
+  'equipment': 'Gear & Equipment'
 };
 
 // Facebook page link for "View More" CTA
