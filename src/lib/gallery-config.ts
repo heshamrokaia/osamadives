@@ -849,14 +849,15 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     id: 'gallery-seafood-dinner',
     src: '/images/gallery/dahab/img-20211204-195856.jpeg',
-    alt: 'Two men sitting at a restaurant table with a spectacular shrimp display, colorful fish mural painted on the wall behind them, orange cushions and plant decorations',
-    title: 'Shrimp Night in Dahab',
-    description: 'December 2021, dinner at one of Dahab\'s seafood restaurants. Look at that shrimp display - they do not hold back here. The fish mural on the wall, the orange cushions, the whole atmosphere. After a long day of diving, this is how we refuel.',
-    location: 'Dahab, Egypt',
+    alt: 'Osama and Nuno Gomes sitting together at Shark Restaurant in Dahab, spectacular shrimp display on the table, colorful fish mural painted on the wall behind them, orange cushions and plant decorations',
+    title: 'Dinner with a World Record Holder',
+    description: 'December 2021, hosting my close friend Nuno Gomes at my restaurant, Shark Restaurant in Dahab. That is the legendary Nuno sitting right next to me - the man who held not one but two Guinness World Records for the deepest scuba dives ever made.',
+    location: 'Shark Restaurant, Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
     date: '2021-12-04',
     category: 'dahab',
-    tags: ['food', 'restaurant', 'seafood']
+    tags: ['food', 'restaurant', 'seafood', 'nuno-gomes', 'world-record', 'legend'],
+    story: 'This is my close friend Nuno Gomes, and we are sitting right here in my restaurant - Shark Restaurant in Dahab. Nuno is one of the greatest deep divers who ever lived. In 1996, he set the Guinness World Record for the deepest cave dive at 283 meters in Boesmansgat, South Africa. Then in June 2005, he came right here to Dahab and broke the world record for the deepest seawater scuba dive - 318.25 meters in the Red Sea. It took him only 20 minutes to go down, but 12 hours to come back to the surface. Imagine that - 12 hours of decompression. The man is a civil engineer from South Africa, born in Portugal, and he is as humble as they come. He once said "I never thought about records, I just kept on diving a bit deeper." That is the kind of person he is. When you sit with Nuno, you would never guess he descended deeper than almost any human being on the planet. He did it right here, in our waters, in Dahab. And now here we are sharing a shrimp dinner at my place like two old friends. This is what diving does - it connects people across the world.'
   },
   {
     id: 'gallery-bedouin-shelter',
