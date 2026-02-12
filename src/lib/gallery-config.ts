@@ -928,13 +928,14 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     id: 'gallery-group-dinner',
     src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-13.03.17-1.jpeg',
-    alt: 'Large group of about twenty people at a long dinner table in a colorful Dahab restaurant decorated with hanging lanterns, plants, and orange cushions, everyone smiling at the camera',
-    title: 'Dinner with the Dive Family',
-    description: 'After-dive dinner at one of our favorite restaurants in Dahab. Twenty of us at one long table, colorful lanterns hanging everywhere, the plants, the orange cushions. Everyone is tired from diving but nobody wants to go home. These dinners last for hours.',
-    location: 'Dahab, Egypt',
+    alt: 'Large group of about twenty divers at a long dinner table at Shark Restaurant in Dahab, decorated with colorful hanging lanterns, tropical plants, and orange cushions, everyone smiling at the camera',
+    title: 'Shark Restaurant — The Dive Family Table',
+    description: 'This is my restaurant, Shark Restaurant - rated number one on TripAdvisor in Dahab. Twenty of us at one long table after a full day of diving. The colorful lanterns, the plants, the orange cushions - this is the atmosphere we built here. Everyone is tired from diving but nobody wants to go home.',
+    location: 'Shark Restaurant, Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
     category: 'dahab',
-    tags: ['dinner', 'restaurant', 'nightlife']
+    tags: ['dinner', 'restaurant', 'nightlife', 'shark-restaurant', 'tripadvisor', 'dive-family'],
+    story: 'Welcome to Shark Restaurant - my restaurant, right here in Dahab, rated number one on TripAdvisor. This is what happens after a full day of diving with the crew. Twenty of us around one long table, colorful lanterns hanging from every corner, tropical plants everywhere, the orange cushions. Look at all these faces - divers from all over the world who came to Dahab to dive with us, and now they are family. This is what I am most proud of. Yes, we take people to the Blue Hole, the Canyon, Ras Abu Galum - but this right here, this dinner table, this is where the real magic happens. Nobody wants to leave. The food keeps coming, the stories keep flowing, and by the end of the night everyone has made friends for life. Shark Restaurant is not just a place to eat - it is where the diving family comes together.'
   },
 
   // === NEW GALLERY IMAGES - HERITAGE ===
