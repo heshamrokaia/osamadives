@@ -835,18 +835,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     tags: ['planet-divers', 'dive-center', 'dahab']
   },
   {
-    id: 'gallery-birthday-hug',
-    src: '/images/gallery/dahab/img-20211110-150513.jpeg',
-    alt: 'Osama hugging friend wearing Scary Happy Birthday shirt in Bedouin hut',
-    title: 'Birthday in Dahab',
-    description: 'Celebrating birthdays the Dahab way - with friends and big hugs.',
-    location: 'Dahab, Egypt',
-    coordinates: { lat: 28.5000, lng: 34.5167 },
-    date: '2021-11-10',
-    category: 'dahab',
-    tags: ['birthday', 'friends', 'celebration']
-  },
-  {
     id: 'gallery-birthday-plate',
     src: '/images/gallery/dahab/img-20211110-155127.jpeg',
     alt: 'Hand-painted birthday plate with fish designs and Dahab text',
