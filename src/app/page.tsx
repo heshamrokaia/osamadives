@@ -539,7 +539,7 @@ export default function Home() {
                 </p>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   My family opened <a href="https://facebook.com/sharkrest.official" target="_blank" rel="noopener noreferrer" className="text-[#5a5f4e] font-semibold hover:underline">Shark Restaurant</a> -
-                  now one of the most famous seafood restaurants in Dahab, ranked #1 on TripAdvisor.
+                  now one of the most famous seafood restaurants in Dahab, <a href="https://www.tripadvisor.com/Restaurant_Review-g297547-d1645627-Reviews-Shark_Restaurant-Dahab_South_Sinai_Red_Sea_and_Sinai.html" target="_blank" rel="noopener noreferrer" className="text-[#5a5f4e] font-semibold hover:underline">rated 4.5 on TripAdvisor</a> with over 1,350 reviews.
                   For decades, we&apos;ve welcomed visitors to our table. In 2011, I decided to extend
                   that hospitality to a new dimension: underwater.
                 </p>

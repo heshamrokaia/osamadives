@@ -92,15 +92,15 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     id: 'story-first-breath',
     src: '/images/OsamaDives_PADI_Open_Water.jpeg',
-    alt: 'Osama helping a young boy gear up with a scuba tank on the Dahab promenade, other children in wetsuits waiting nearby',
-    title: 'Gearing Up the Young Ones',
-    description: 'Helping a young diver get his tank on for the first time, right here on the Dahab promenade.',
+    alt: 'Osama gearing up his son Abdullah with a scuba tank on the Dahab promenade, other children in wetsuits waiting nearby',
+    title: 'Training the Next Generation',
+    description: 'Getting my son Abdullah geared up right here on the Dahab promenade. Starting them young - that is how you build a diver for life.',
     location: 'Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
     featured: true,
     category: 'stories',
-    tags: ['kids', 'teaching', 'dahab', 'story'],
-    story: 'This is one of my favorite things - getting the young ones ready for their first time underwater. Look at this boy, so serious, so focused. The tank is almost as big as he is! You can see more kids in wetsuits waiting for their turn behind us. This is on the Dahab promenade, right in front of the dive centers. I always tell the parents: your child will never forget this day. And they never do. Some of these kids I taught years ago are now certified divers who come back to Dahab with their own friends. That is the most beautiful thing about teaching - you plant a seed and years later it grows into a lifelong love for the sea.'
+    tags: ['abdullah', 'son', 'family', 'kids', 'teaching', 'dahab', 'story', 'next-generation'],
+    story: 'This is my son Abdullah, and I am getting him geared up right here on the Dahab promenade. Look at him - so serious, so focused. The tank is almost as big as he is! I started him young because that is how my father taught me. You do not wait until they are old enough - you put them in the water early and they grow up with the sea in their blood. You can see more kids in wetsuits waiting for their turn behind us. This is what I love most about what I do - passing it on to the next generation, starting with my own son. Abdullah is growing up surrounded by diving every single day. He sees the dive teams come and go, he knows the gear, he knows the sea. One day he will carry this forward. That is the dream of every father - to see your child love what you love, and to know that everything you built will live on.'
   },
   {
     id: 'story-camel-safari',
@@ -930,12 +930,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-13.03.17-1.jpeg',
     alt: 'Large group of about twenty divers at a long dinner table at Shark Restaurant in Dahab, decorated with colorful hanging lanterns, tropical plants, and orange cushions, everyone smiling at the camera',
     title: 'Shark Restaurant — The Dive Family Table',
-    description: 'This is my restaurant, Shark Restaurant - rated number one on TripAdvisor in Dahab. Twenty of us at one long table after a full day of diving. The colorful lanterns, the plants, the orange cushions - this is the atmosphere we built here. Everyone is tired from diving but nobody wants to go home.',
+    description: 'This is my restaurant, Shark Restaurant - rated 4.5 on TripAdvisor with over 1,350 reviews. Twenty of us at one long table after a full day of diving. The colorful lanterns, the plants, the orange cushions - this is the atmosphere we built here. Everyone is tired from diving but nobody wants to go home.',
     location: 'Shark Restaurant, Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
     category: 'dahab',
     tags: ['dinner', 'restaurant', 'nightlife', 'shark-restaurant', 'tripadvisor', 'dive-family'],
-    story: 'Welcome to Shark Restaurant - my restaurant, right here in Dahab, rated number one on TripAdvisor. This is what happens after a full day of diving with the crew. Twenty of us around one long table, colorful lanterns hanging from every corner, tropical plants everywhere, the orange cushions. Look at all these faces - divers from all over the world who came to Dahab to dive with us, and now they are family. This is what I am most proud of. Yes, we take people to the Blue Hole, the Canyon, Ras Abu Galum - but this right here, this dinner table, this is where the real magic happens. Nobody wants to leave. The food keeps coming, the stories keep flowing, and by the end of the night everyone has made friends for life. Shark Restaurant is not just a place to eat - it is where the diving family comes together.'
+    story: 'Welcome to Shark Restaurant - my restaurant, right here in Dahab, rated 4.5 on TripAdvisor with over 1,350 reviews from guests around the world. This is what happens after a full day of diving with the crew. Twenty of us around one long table, colorful lanterns hanging from every corner, tropical plants everywhere, the orange cushions. Look at all these faces - divers from all over the world who came to Dahab to dive with us, and now they are family. This is what I am most proud of. Yes, we take people to the Blue Hole, the Canyon, Ras Abu Galum - but this right here, this dinner table, this is where the real magic happens. Nobody wants to leave. The food keeps coming, the stories keep flowing, and by the end of the night everyone has made friends for life. Shark Restaurant is not just a place to eat - it is where the diving family comes together.'
   },
 
   // === NEW GALLERY IMAGES - HERITAGE ===
