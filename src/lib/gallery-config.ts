@@ -702,14 +702,15 @@ export const galleryPhotos: GalleryPhoto[] = [
   {
     id: 'gallery-hunts-dive-shop',
     src: '/images/gallery/team/img-20211128-095042.jpeg',
-    alt: 'Osama in full black technical dive gear giving thumbs up next to a friend wearing a Hunt\'s Dive Shop Andes New York t-shirt, tanks and wooden beams of the dive center behind them',
-    title: 'From New York to Dahab',
-    description: 'November 2021, me in my technical gear with a friend wearing his Hunt\'s Dive Shop shirt from Andes, New York. Divers come from everywhere to dive here. I love that - someone from a small town in New York ends up in my dive center in the Sinai.',
+    alt: 'Osama in full black technical dive gear giving thumbs up next to Nuno Gomes wearing a Hunt\'s Dive Shop Andes New York t-shirt and black cap, tanks and wooden beams of the dive center behind them',
+    title: 'Two Deep Divers, One Dive Center',
+    description: 'November 2021, me and my close friend Nuno Gomes at my dive center. I am in my full technical gear, Nuno is wearing his Hunt\'s Dive Shop shirt from Andes, New York. This is the man who held the Guinness World Record for the deepest seawater dive - and he set that record right here in Dahab.',
     location: 'Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
     date: '2021-11-28',
     category: 'team',
-    tags: ['friends', 'gear', 'dive-center']
+    tags: ['nuno-gomes', 'world-record', 'friends', 'gear', 'dive-center', 'legend'],
+    story: 'That is my brother Nuno Gomes standing right next to me. I am in my full technical diving gear, and Nuno is relaxed in his Hunt\'s Dive Shop t-shirt from Andes, New York. People see this photo and think it is just two friends at a dive center - but this man dove to 318 meters in the Red Sea, right here in Dahab, and held the Guinness World Record for the deepest scuba dive in seawater. He came to Dahab in 2005 for that record attempt, and our friendship goes back to those days. When the best deep divers in the world come to Dahab, they come through here. Nuno is not just a record holder - he is one of the most humble people you will ever meet. A civil engineer from South Africa, born in Portugal, who just loved going deeper. He always says he never planned to break records, he just kept diving a little deeper each time. That is the spirit of a true diver.'
   },
   {
     id: 'gallery-promenade-selfie',
