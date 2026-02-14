@@ -13,70 +13,92 @@ export default function Home() {
   const divingExperiences = [
     {
       image: "/images/20250506_2155_Split-View-Dive-Adventure_simple_compose_01jtjq33dff84rv6vkcwef3g89.png",
-      title: "Discover Scuba Diving",
-      tagline: "Where Fear Becomes Wonder",
+      title: "Intro Dive (Demo Dive)",
+      tagline: "Try Diving Before You Commit",
       description:
-        "I have watched hundreds of faces transform the moment they take that first breath underwater. The panic fades, the eyes widen, and something shifts forever. Dahab's lagoon cradles beginners like a gentle hand - warm, calm, impossibly clear. This is where lifelong love affairs with the ocean begin.",
-      location: "Dahab Lagoon",
+        "Not sure if diving is for you? The Intro is a simplified demo dive at the Lighthouse - Dahab's authorized location with easy entry and exit. The water is shallow and confined, but don't let that fool you: fish, marine life, and coral reefs are right there. It's the perfect way to see if you love it before committing to the full Open Water course.",
+      location: "The Lighthouse, Dahab",
       duration: "Typically Half Day",
       level: "No experience needed",
-      highlights: ["Calm, shallow waters", "Warm year-round", "Life-changing moments"],
+      highlights: ["Shallow, safe environment", "Real marine life & coral", "Easy entry & exit"],
     },
     {
       image: "/images/OsamaDives_PADI_Open_Water.jpeg",
       title: "Open Water Diver",
       tagline: "The Passport to a Blue World",
       description:
-        "This certification unlocks every dive site on the planet. But more than that - it gives you a new way of seeing. You will learn to breathe, to float, to become weightless. Dahab's shore diving means no boats, no seasickness. Just you, the reef, and the beginning of something beautiful.",
+        "Your Open Water certification unlocks every dive site on the planet down to 18 meters. But the real focus isn't just depth - it's learning to handle your equipment, deal with malfunctions, and perform essential exercises underwater. By the end, you'll have the buoyancy skills and confidence to continue your diving journey anywhere in the world.",
       location: "Dahab",
       duration: "3-4 Days",
       level: "Perfect for beginners",
-      highlights: ["World-recognized certification", "Shore diving", "Personal attention"],
+      highlights: ["Certified to 18m", "Equipment mastery", "Buoyancy foundations"],
       popular: true,
     },
     {
       image: "/images/Advanced Open Water.jpeg",
       title: "Advanced Open Water",
-      tagline: "Where Comfortable Becomes Confident",
+      tagline: "Unlock the World's Best Dive Sites",
       description:
-        "Night dives where your flashlight summons curious octopus. Deep dives where nitrogen plays tricks on your mind. Navigation by compass through underwater canyons. The Advanced course takes you places you never imagined - thirty meters down, you meet yourself.",
+        "The Advanced course is where diving truly opens up. Five dives over two days, including two compulsory dives - Deep Adventure (to 30m) and Underwater Navigation - plus three electives you choose: Boat Diving, Peak Performance Buoyancy, Night Adventure, or Fish ID. Navigation isn't just about a compass - it's learning to read the environment: currents, light, reefs, and marine life as your guide. The compass is your backup when natural references aren't available. This is also where you learn to protect the marine environment.",
       location: "Dahab + North Sinai",
-      duration: "2-3 Days",
+      duration: "2 Days (5 Dives)",
       level: "Open Water certified",
-      highlights: ["Dive to 30 meters", "Night adventures", "Personal discovery"],
+      highlights: ["Dive to 30m", "Protect marine life", "Night & navigation adventures"],
     },
     {
       image: "/images/OsamaDives_Rescue_Diver_Course.png",
       title: "Rescue Diver",
-      tagline: "The Course That Transforms Divers",
+      tagline: "Open Water Saves Yourself. Rescue Saves Others.",
       description:
-        "Every diver who completes this course tells me the same thing - they feel changed. Not because they can save others now, though they can. But because they see the underwater world differently. Awareness sharpens. Compassion deepens. You stop being just a visitor to the reef and become its guardian.",
+        "Open Water teaches you to rescue yourself. Advanced teaches you to protect the environment. Rescue is about saving others. This course transforms how you see diving - awareness sharpens, compassion deepens, and you become a true guardian of the sea. Prerequisites: Advanced certification plus a minimum of 20 logged dives. We're strict on the 20 dives - safety and competence come first.",
       location: "Dahab",
       duration: "3-4 Days",
-      level: "Advanced certified",
-      highlights: ["Emergency mastery", "Profound transformation", "Complete confidence"],
+      level: "Advanced + 20 logged dives",
+      highlights: ["Save others", "Profound transformation", "Complete confidence"],
     },
     {
       image: "/images/OsamaDives_The_Blue_Hole.jpeg",
       title: "The Blue Hole",
       tagline: "A Pilgrimage for Divers",
       description:
-        "People ask why I never tire of the Blue Hole after thousands of dives. How could I? This sinkhole holds more moods than the sea has colors. Some mornings it mirrors the sky like glass. Other days, currents stir stories from the deep. I know every corner, every secret passage - and it still surprises me.",
+        "People ask why I never tire of the Blue Hole after thousands of dives. This legendary sinkhole holds more moods than the sea has colors. Important: anyone diving the Blue Hole must have at least an Open Water certification. And The Arch? That's strictly for Technical Divers - it requires specialized tech courses, not recreational training. Recreational diving here is limited to a maximum depth of 40 meters. Safety first, always.",
       location: "Blue Hole, Dahab",
       duration: "Half Day Trip",
-      level: "Open Water certified",
-      highlights: ["World-famous site", "The Arch", "Local expertise"],
+      level: "Open Water certified (minimum)",
+      highlights: ["World-famous site", "The Arch (Tech only)", "Local expertise"],
     },
     {
       image: "/images/Camels.jpeg",
       title: "Ras Abu Galum Safari",
       tagline: "The Old Way to the Sea",
       description:
-        "Before trucks, before cars, Bedouins crossed Sinai by camel. This safari honors that tradition - riding through bronze canyons to reach reefs that speedboats will never find. You arrive the way visitors have for centuries: slowly, gratefully, ready to receive what the sea offers.",
+        "Before trucks, before cars, Bedouins crossed Sinai by camel. This safari honors that tradition - riding through bronze canyons to reach reefs that speedboats will never find. Best suited for Advanced divers due to the nature of the sites, but snorkelers are also welcome with a private guide. We never just drop snorkelers off - safety first, a guide always accompanies you.",
       location: "Ras Abu Galum",
       duration: "Full Day Adventure",
-      level: "Open Water certified",
-      highlights: ["Ancient traditions", "Pristine reefs", "Bedouin hospitality"],
+      level: "Advanced recommended / Snorkelers with guide",
+      highlights: ["Ancient traditions", "Pristine reefs", "Snorkeling option"],
+    },
+    {
+      image: "/images/OsamaDives_CPR Training Simulation.png",
+      title: "Divemaster",
+      tagline: "Turn Your Passion Into a Profession",
+      description:
+        "The Divemaster course is the first professional level in diving. Over 2 weeks to a month, you'll transition from recreational diver to dive professional - learning to lead dives, assist instructors, and manage diving activities. This is where your love for the ocean becomes a career.",
+      location: "Dahab",
+      duration: "2 Weeks - 1 Month",
+      level: "Rescue Diver certified",
+      highlights: ["Professional level", "Lead dives", "Career pathway"],
+    },
+    {
+      image: "/images/FB_IMG_1625154352007.jpg",
+      title: "Specialty Courses",
+      tagline: "Go Deeper Into What You Love",
+      description:
+        "Want to specialize? Choose from Deep Specialty (3 dives, can be done in one day), Nitrox (extend your dive time), Night Diving, Peak Performance Buoyancy, or Boat Diving. Most specialties are 3-4 dives. Each one sharpens a specific skill and opens new underwater experiences.",
+      location: "Dahab",
+      duration: "1-2 Days",
+      level: "Varies by specialty",
+      highlights: ["Deep Specialty", "Nitrox", "Night & Buoyancy"],
     },
   ];
 
@@ -433,7 +455,9 @@ export default function Home() {
                 </div>
                 <p className="text-gray-600">
                   There&apos;s a reason divers travel from every corner of the
-                  globe to descend into this legendary sinkhole. Having explored
+                  globe to descend into this legendary sinkhole. Open Water certification
+                  is the minimum requirement. The famous Arch is strictly for Technical Divers -
+                  recreational diving here tops out at 40 meters. Having explored
                   the Blue Hole over 1,000 times, I know its secrets, its moods,
                   and exactly how to show you its magic safely.
                 </p>
