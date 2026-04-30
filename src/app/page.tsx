@@ -6,6 +6,7 @@ import { useState } from "react";
 import * as gtag from "@/lib/gtag";
 import FloatingBadge from "@/components/FloatingBadge";
 import AiFeatureRibbon from "@/components/AiFeatureRibbon";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -1505,6 +1506,7 @@ export default function Home() {
 
       {/* Floating Heritage Badge - Bottom Left (away from WhatsApp button) */}
       <FloatingBadge />
+      <BackToTop />
 
       {/* Floating WhatsApp Button - Bottom Right */}
       <a
