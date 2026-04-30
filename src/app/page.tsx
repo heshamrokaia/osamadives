@@ -374,7 +374,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#contact"
-              className="bg-[#5a5f4e] hover:bg-[#4a4f3e] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+              className="bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               onClick={() =>
                 gtag.event({
                   action: "cta_click",
@@ -387,7 +387,7 @@ export default function Home() {
             </Link>
             <Link
               href="#about"
-              className="bg-white/10 hover:bg-white/20 backdrop-blur text-white font-bold py-4 px-8 rounded-full text-lg transition-all border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              className="bg-[#2a2e25] hover:bg-[#1f221b] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               onClick={() =>
                 gtag.event({
                   action: "cta_click",
