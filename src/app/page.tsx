@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import * as gtag from "@/lib/gtag";
 import FloatingBadge from "@/components/FloatingBadge";
+import AiFeatureRibbon from "@/components/AiFeatureRibbon";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -365,6 +366,10 @@ export default function Home() {
             breath underwater or conquering the Blue Hole, you&apos;re not just a tourist to me -
             you&apos;re a guest in my home.
           </p>
+
+          <div className="flex justify-center mb-6">
+            <AiFeatureRibbon variant="hero" />
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
