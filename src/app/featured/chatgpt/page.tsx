@@ -25,9 +25,9 @@ const articleLd = {
         "@id": "https://www.osamadives.com/#person",
       },
       image: [
-        "https://www.osamadives.com/press/chatgpt-recommendation-1.png",
-        "https://www.osamadives.com/press/chatgpt-recommendation-2.png",
-        "https://www.osamadives.com/press/chatgpt-recommendation-3.png",
+        "https://www.osamadives.com/press/chatgpt-recommendation-1.jpg",
+        "https://www.osamadives.com/press/chatgpt-recommendation-2.jpg",
+        "https://www.osamadives.com/press/chatgpt-recommendation-3.jpg",
       ],
       about: {
         "@id": "https://www.osamadives.com/#person",
@@ -63,7 +63,7 @@ const articleLd = {
       name: "Featured by ChatGPT - Top Dive Instructor in Dahab",
       isPartOf: { "@id": "https://www.osamadives.com/#website" },
       primaryImageOfPage:
-        "https://www.osamadives.com/press/chatgpt-recommendation-1.png",
+        "https://www.osamadives.com/press/chatgpt-recommendation-1.jpg",
       datePublished: PUBLISHED,
       speakable: {
         "@type": "SpeakableSpecification",
@@ -178,7 +178,7 @@ export default function FeaturedChatgptPage() {
           <figure className="mb-10">
             <div className="relative w-full aspect-[3/5] sm:aspect-[3/5] rounded-lg overflow-hidden shadow-lg border border-[#5a5f4e]/15 bg-[#5a5f4e]/5">
               <Image
-                src="/press/chatgpt-recommendation-1.png"
+                src="/press/chatgpt-recommendation-1.jpg"
                 alt="ChatGPT response in Arabic naming Osama as the top freelance dive instructor in Dahab"
                 fill
                 className="object-contain"
@@ -197,7 +197,7 @@ export default function FeaturedChatgptPage() {
           <figure className="mb-10">
             <div className="relative w-full aspect-[3/5] sm:aspect-[3/5] rounded-lg overflow-hidden shadow-lg border border-[#5a5f4e]/15 bg-[#5a5f4e]/5">
               <Image
-                src="/press/chatgpt-recommendation-2.png"
+                src="/press/chatgpt-recommendation-2.jpg"
                 alt="ChatGPT Sources panel with osamadives.com listed at the top above other Dahab dive operators"
                 fill
                 className="object-contain"
@@ -215,7 +215,7 @@ export default function FeaturedChatgptPage() {
           <figure className="mb-10">
             <div className="relative w-full aspect-[3/5] sm:aspect-[3/5] rounded-lg overflow-hidden shadow-lg border border-[#5a5f4e]/15 bg-[#5a5f4e]/5">
               <Image
-                src="/press/chatgpt-recommendation-3.png"
+                src="/press/chatgpt-recommendation-3.jpg"
                 alt="ChatGPT overall ranking placing Osama first based on reviews, experience and reputation"
                 fill
                 className="object-contain"

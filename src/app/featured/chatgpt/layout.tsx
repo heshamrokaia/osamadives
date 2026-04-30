@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "ChatGPT named OsamaDives its top freelance dive instructor in Dahab. Read the story, see the screenshots.",
     images: [
       {
-        url: "/press/chatgpt-og.png",
+        url: "/images/OsamaDives.png",
         width: 1200,
         height: 630,
         alt: "OsamaDives featured by ChatGPT as top dive instructor in Dahab",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Featured by ChatGPT - Top Dive Instructor in Dahab",
     description:
       "ChatGPT named OsamaDives its top freelance dive instructor in Dahab. Read the story, see the screenshots.",
-    images: ["/press/chatgpt-og.png"],
+    images: ["/images/OsamaDives.png"],
   },
   robots: {
     index: true,
