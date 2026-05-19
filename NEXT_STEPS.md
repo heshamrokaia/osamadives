@@ -15,8 +15,8 @@ Last updated: 2026-05-19
 The site has **0 external backlinks**. Without inbound links, Google won't crawl the new pages deeply or rank them broadly. None of these are technical — they need someone to act in third-party UIs:
 
 - [x] **Add `osamadives.com` to a Facebook Page** — DONE 2026-05-20. New Page created at [facebook.com/osamadives](https://www.facebook.com/osamadives). Website link live in the Page intro. First external backlink secured.
-- [ ] **Profile picture + cover photo for the new Page** — drag-drop the two images from `public/images/` into the Page (`OsamaDives_Him_Self.jpeg` for profile, `OsamaDives.png` or `OsamaDives_The_Blue_Hole.jpeg` for cover).
-- [ ] **Add Osama as co-admin on the new Page** — Page Settings → Page roles → invite Osama by email or profile. So he can post directly from his phone.
+- [x] **Profile picture + cover photo for the new Page** — DONE 2026-05-20. Portrait + homepage hero uploaded.
+- [x] **Invite Osama as co-admin on the new Page** — DONE 2026-05-20. Task access (all 5 toggles on). **Invite expires ~2026-06-19** — Osama needs to accept on his Facebook within 30 days. Remind him if no acceptance after a week.
 - [ ] **Share `facebook.com/osamadives` from Osama's personal profile** so his ~1,900 friends can find/like it.
 - [ ] **Add `osamadives.com` to Osama's Instagram bio** — instagram.com/osama_mohamed_hassan → Edit profile → Website.
 - [ ] **TripAdvisor instructor listing for Osama.** Status as of 2026-05-19 is unclear — Hesham thinks one was started. Check `heshamrokaia@gmail.com` for any TripAdvisor verification emails. If nothing, create new at tripadvisor.com/Owners → Things to Do → Add a listing.
