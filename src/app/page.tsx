@@ -6,6 +6,7 @@ import { useState } from "react";
 import * as gtag from "@/lib/gtag";
 import FloatingBadge from "@/components/FloatingBadge";
 import AiFeatureRibbon from "@/components/AiFeatureRibbon";
+import GuestReviewsRibbon from "@/components/GuestReviewsRibbon";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
@@ -381,8 +382,9 @@ export default function Home() {
             you&apos;re a guest in my home.
           </p>
 
-          <div className="flex justify-center mb-6">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             <AiFeatureRibbon variant="hero" />
+            <GuestReviewsRibbon variant="hero" />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -795,7 +797,7 @@ export default function Home() {
             </p>
 
             {/* Featured: verified Google review */}
-            <article className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border-t-4 border-[#5a5f4e] max-w-4xl mx-auto mb-12">
+            <article id="featured-review" className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border-t-4 border-[#5a5f4e] max-w-4xl mx-auto mb-12 scroll-mt-24">
               <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
                 <div className="flex items-center gap-3">
                   <svg className="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true">
