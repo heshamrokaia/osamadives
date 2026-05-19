@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Osama is a PADI Master Scuba Diver Trainer in Dahab, Egypt. Pioneer family since 1983. Experience the Red Sea with an Ambassador of Dahab.",
   keywords:
-    "scuba diving Dahab, diving instructor Egypt, PADI instructor Dahab, Blue Hole diving, diving in Egypt, Red Sea diving, Dahab diving guide, local diving expert Dahab, Ambassador of Dahab, diving since 1983",
+    "scuba diving Dahab, diving instructor Egypt, PADI instructor Dahab, Blue Hole diving, diving in Egypt, Red Sea diving, Dahab diving guide, local diving expert Dahab, Ambassador of Dahab, diving since 1983, Sinai diving, South Sinai diving, technical diving Dahab, sidemount Dahab, IANTD instructor Egypt, dive sites Dahab, Canyon dive Dahab, night diving Dahab, snorkeling Dahab, Egypt scuba holiday, Dahab dive trip, Red Sea Sinai, PADI Master Scuba Diver Trainer Dahab, Egypt diving holiday",
   authors: [{ name: "Osama" }],
   creator: "Osama",
   publisher: "OsamaDives",

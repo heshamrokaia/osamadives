@@ -206,6 +206,12 @@ export default function Home() {
               Experiences
             </Link>
             <Link
+              href="/dive-sites"
+              className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e] rounded"
+            >
+              Dive Sites
+            </Link>
+            <Link
               href="#stories"
               className="hover:text-white transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#5a5f4e] rounded"
             >
@@ -300,6 +306,13 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Experiences
+              </Link>
+              <Link
+                href="/dive-sites"
+                className="block text-white/90 hover:text-white transition py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Dive Sites
               </Link>
               <Link
                 href="#stories"
