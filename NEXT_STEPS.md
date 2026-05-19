@@ -38,6 +38,10 @@ Once 2-3 of those are live, expect to see new pages indexed within 1-2 weeks.
 
 ---
 
+## Inspiration to review (2026-05-20)
+
+- [ ] **Watch & break down**: `https://www.instagram.com/p/DYACg3XDOR6/` — Osama shared this ad and said he wants to do something similar. NEXT SESSION: download via `/watch` skill, work out what specifically he likes about it (style / structure / message), then either build something matching for the site or brief him on content to film.
+
 ## Content backlog (Facebook media Hesham shared 2026-05-19)
 
 These are media URLs on Osama's Facebook page that could be featured on the site. Decide later which to embed/download:
