@@ -6,6 +6,10 @@ Last updated: 2026-05-19
 
 ---
 
+## Hottest open item (do this when you have 20 quiet minutes)
+
+- [ ] **Wire up Instagram auto-sync.** Code is shipped. Follow [INSTAGRAM_SETUP.md](INSTAGRAM_SETUP.md) — convert IG → Business, link to osamasharks FB Page, create a Meta dev app, paste two env vars into Vercel. Section appears automatically once both vars are set. Tokens expire every 60 days → calendar reminder needed.
+
 ## The blocker (do these before any more SEO work)
 
 The site has **0 external backlinks**. Without inbound links, Google won't crawl the new pages deeply or rank them broadly. None of these are technical — they need someone to act in third-party UIs:

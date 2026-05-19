@@ -7,6 +7,7 @@ import * as gtag from "@/lib/gtag";
 import FloatingBadge from "@/components/FloatingBadge";
 import AiFeatureRibbon from "@/components/AiFeatureRibbon";
 import GuestReviewsRibbon from "@/components/GuestReviewsRibbon";
+import InstagramFeed from "@/components/InstagramFeed";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
@@ -981,6 +982,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Instagram Feed - auto-pulled from @osama_mohamed_hassan via Meta Graph API */}
+        <InstagramFeed />
 
         {/* Contact Section */}
         <section id="contact" className="py-20 px-4 bg-[#5a5f4e] text-white">
