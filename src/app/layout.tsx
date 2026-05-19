@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
@@ -155,6 +156,7 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         {children}
+        <Analytics />
       </body>
     </html>
   );

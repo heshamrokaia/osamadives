@@ -781,168 +781,63 @@ export default function Home() {
               Real experiences from divers who became friends
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Testimonial 1 - German guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            {/* Featured: verified Google review */}
+            <article className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border-t-4 border-[#5a5f4e] max-w-4xl mx-auto mb-12">
+              <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+                <div className="flex items-center gap-3">
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                   </svg>
+                  <span className="text-sm font-semibold text-gray-700">Verified Google review</span>
                 </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  Diving with Osama felt like visiting a friend, not hiring an instructor. He picked us up, we had tea with his family, then explored the Blue Hole together. His father opened Shark Restaurant in 1983 - this family knows Dahab like no one else.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Markus W.</p>
-                    <p className="text-sm text-gray-500">Munich, Germany</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="German flag">🇩🇪</span>
-                    <p className="text-xs text-gray-400 mt-1">Oct 2024</p>
-                  </div>
+                <div className="flex items-center gap-1" aria-label="5 out of 5 stars">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <svg key={s} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.539 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.783.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z" />
+                    </svg>
+                  ))}
                 </div>
-              </article>
+              </div>
+              <blockquote className="text-gray-800 text-base md:text-lg leading-relaxed mb-6">
+                &ldquo;I did my Open Water with them. I really enjoy diving but because of claustrophobia underwater and panic attacks, it was mentally very challenging for me. They gave me a separate instructor - Osama - and he was incredible. He showed so much patience, understanding, and professionalism that I slowly started building trust underwater again. He never forced me or held me underwater, so I always felt safe with him. At the same time, he knew exactly when to push me harder and improve my skills. Teaching someone calm is one thing - teaching someone with claustrophobia and panic attacks requires a completely different level of skill, intelligence, patience, and understanding - and Osama has all of this. He even surprised me with a little underwater birthday celebration.&rdquo;
+              </blockquote>
+              <div className="border-t border-gray-200 pt-4 flex items-center justify-between flex-wrap gap-3">
+                <div>
+                  <p className="font-semibold text-gray-900">Ana Shinobi</p>
+                  <p className="text-sm text-gray-500">Open Water student &middot; May 2026</p>
+                </div>
+                <a
+                  href={"https://www.google.com/maps/reviews/@28.489362,34.5157305,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OWFFtMDFOamhIZGpab1UzTjZXRlpFZVdkUWEwRRAB!2m1!1s0x0:0x4cef5c73b1ff7bb4?hl=en-GB"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-[#5a5f4e] font-semibold hover:underline inline-flex items-center gap-1"
+                  aria-label="Read Ana's full review on Google Maps"
+                >
+                  Read on Google
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </article>
 
-              {/* Testimonial 2 - British guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  I was nervous about my first open water certification. Osama never rushed me, explained everything twice if needed, and somehow made me feel completely safe 18 meters under. Best decision of my life.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Emma T.</p>
-                    <p className="text-sm text-gray-500">Bristol, UK</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="British flag">🇬🇧</span>
-                    <p className="text-xs text-gray-400 mt-1">Jan 2025</p>
-                  </div>
-                </div>
-              </article>
-
-              {/* Testimonial 3 - American guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  After the dive, Osama took us to his family&apos;s restaurant - Shark. Fresh grilled fish, the Red Sea sparkling in the sunset... I&apos;ve dived all over the world but this was something else. You&apos;re not a tourist here, you&apos;re a guest.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Mike D.</p>
-                    <p className="text-sm text-gray-500">San Diego, USA</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="American flag">🇺🇸</span>
-                    <p className="text-xs text-gray-400 mt-1">Nov 2024</p>
-                  </div>
-                </div>
-              </article>
-
-              {/* Testimonial 4 - French guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  He knows where every Napoleon wrasse hides, which coral shelters the octopus, when the turtles come through. Forty years of family knowledge of these waters - you simply cannot get this from a regular dive shop.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Sophie L.</p>
-                    <p className="text-sm text-gray-500">Lyon, France</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="French flag">🇫🇷</span>
-                    <p className="text-xs text-gray-400 mt-1">Sep 2024</p>
-                  </div>
-                </div>
-              </article>
-
-              {/* Testimonial 5 - Dutch guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  Safety first, always. Osama checked our equipment three times, briefed us thoroughly, and I never once felt uncertain. For a nervous diver like me, that confidence means everything.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Jan V.</p>
-                    <p className="text-sm text-gray-500">Amsterdam, Netherlands</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="Dutch flag">🇳🇱</span>
-                    <p className="text-xs text-gray-400 mt-1">Dec 2024</p>
-                  </div>
-                </div>
-              </article>
-
-              {/* Testimonial 6 - Australian guest */}
-              <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <svg
-                    className="w-8 h-8 text-[#5a5f4e]/30"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <blockquote className="text-gray-700 mb-4 leading-relaxed">
-                  Did my Advanced cert with Osama. The night dive was incredible - bioluminescence everywhere! But the real highlight was the camel trip to Abu Galum. Bedouin tea, pristine reefs, no crowds. Magical.
-                </blockquote>
-                <div className="border-t pt-4 flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-gray-900">Rachel K.</p>
-                    <p className="text-sm text-gray-500">Melbourne, Australia</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-2xl" role="img" aria-label="Australian flag">🇦🇺</span>
-                    <p className="text-xs text-gray-400 mt-1">Aug 2024</p>
-                  </div>
-                </div>
-              </article>
+            {/* CTA: more verified Google reviews of Big Blue Dahab team */}
+            <div className="text-center">
+              <a
+                href="https://www.google.com/search?q=Big+Blue+Dahab+reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#5a5f4e] font-semibold hover:underline"
+                aria-label="Open Google to read more reviews of Big Blue Dahab"
+              >
+                Read more verified reviews of Osama and the Big Blue Dahab team on Google
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
         </section>
