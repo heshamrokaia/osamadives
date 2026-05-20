@@ -19,49 +19,88 @@ export interface InstagramFeedResponse {
   message?: string;
 }
 
-const GRAPH_API_VERSION = "v18.0";
-const GRAPH_API_BASE = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
-const FIELDS = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
+const IG_USERNAME = "osama_mohamed_hassan";
+
+// Instagram's public web app ID. Without this header the endpoint returns
+// "useragent mismatch". This is the same ID instagram.com itself sends from
+// the browser, and it's effectively a public constant.
+const IG_WEB_APP_ID = "936619743392459";
+
+// Browser-style User-Agent so the endpoint doesn't 403 us as a bot.
+const USER_AGENT =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36";
+
+interface IGEdgeNode {
+  id: string;
+  shortcode: string;
+  display_url: string;
+  thumbnail_src?: string;
+  is_video?: boolean;
+  __typename?: string;
+  taken_at_timestamp: number;
+  edge_media_to_caption?: {
+    edges?: Array<{ node?: { text?: string } }>;
+  };
+}
+
+interface IGProfileResponse {
+  data?: {
+    user?: {
+      id?: string;
+      username?: string;
+      edge_owner_to_timeline_media?: {
+        edges?: Array<{ node: IGEdgeNode }>;
+      };
+    };
+  };
+}
 
 export async function fetchInstagramFeed(limit = 9): Promise<InstagramFeedResponse> {
-  const token = process.env.IG_ACCESS_TOKEN;
-  const userId = process.env.IG_USER_ID;
-
-  if (!token || !userId) {
-    return {
-      status: "no_token",
-      posts: [],
-      message: "Instagram credentials not yet configured. See INSTAGRAM_SETUP.md.",
-    };
-  }
-
-  const url = `${GRAPH_API_BASE}/${userId}/media?fields=${FIELDS}&limit=${limit}&access_token=${token}`;
+  const url = `https://www.instagram.com/api/v1/users/web_profile_info/?username=${IG_USERNAME}`;
 
   try {
     const res = await fetch(url, {
+      headers: {
+        "User-Agent": USER_AGENT,
+        "X-IG-App-ID": IG_WEB_APP_ID,
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+      },
       next: { revalidate: 21600 },
     });
 
     if (!res.ok) {
       const body = await res.text();
-      const isExpired = /expired|invalid|OAuth/i.test(body);
-      // TEMP DEBUG: also call /me/permissions to see what scopes the token has
-      let permsInfo = "";
-      try {
-        const permsRes = await fetch(`${GRAPH_API_BASE}/me/permissions?access_token=${token}`);
-        permsInfo = (await permsRes.text()).slice(0, 600);
-      } catch {
-        permsInfo = "permissions-call-failed";
-      }
       return {
-        status: isExpired ? "expired" : "error",
+        status: "error",
         posts: [],
-        message: `Meta API returned ${res.status}. Body: ${body.slice(0, 400)} | Token permissions: ${permsInfo}`,
+        message: `Instagram returned ${res.status}. Body: ${body.slice(0, 300)}`,
       };
     }
 
-    const data = await res.json();
-    const posts: InstagramMedia[] = Array.isArray(data?.data) ? data.data : [];
+    const data: IGProfileResponse = await res.json();
+    const edges = data?.data?.user?.edge_owner_to_timeline_media?.edges ?? [];
+
+    const posts: InstagramMedia[] = edges.slice(0, limit).map((edge) => {
+      const node = edge.node;
+      const caption = node.edge_media_to_caption?.edges?.[0]?.node?.text;
+      const mediaType: InstagramMediaType = node.is_video
+        ? "VIDEO"
+        : node.__typename === "GraphSidecar"
+        ? "CAROUSEL_ALBUM"
+        : "IMAGE";
+
+      return {
+        id: node.id,
+        caption,
+        media_type: mediaType,
+        media_url: node.display_url,
+        thumbnail_url: node.thumbnail_src ?? node.display_url,
+        permalink: `https://www.instagram.com/p/${node.shortcode}/`,
+        timestamp: new Date(node.taken_at_timestamp * 1000).toISOString(),
+      };
+    });
 
     return {
       status: "ok",
