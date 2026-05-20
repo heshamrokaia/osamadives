@@ -448,8 +448,11 @@ export default function Home() {
 
       {/* Main Content */}
       <main id="main-content">
-        {/* Featured reel — self-hosted MP4 of Osama's sidemount dive, links to Instagram for sound */}
+        {/* Featured reel — auto-picks latest video from Behold feed; falls back to most recent post */}
         <FeaturedReel />
+
+        {/* Latest from Instagram - Behold widget, 6-post auto-rotating grid */}
+        <InstagramFeed />
 
         {/* Why Dahab Section */}
         <section id="why-dahab" className="py-20 px-4 bg-white">
@@ -863,9 +866,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Instagram Feed - auto-pulled from @osama_mohamed_hassan via Behold widget */}
-        <InstagramFeed />
 
         {/* Stories from Fellow Divers */}
         <section id="stories" className="py-20 px-4 bg-white">
