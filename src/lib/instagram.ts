@@ -45,10 +45,12 @@ export async function fetchInstagramFeed(limit = 9): Promise<InstagramFeedRespon
     if (!res.ok) {
       const body = await res.text();
       const isExpired = /expired|invalid|OAuth/i.test(body);
+      // TEMP: include Meta's body (first 600 chars) in the response so we can see WHY it failed.
+      // Remove this exposure once Instagram feed is working.
       return {
         status: isExpired ? "expired" : "error",
         posts: [],
-        message: `Meta API returned ${res.status}. ${isExpired ? "Token likely expired - run the refresh step from INSTAGRAM_SETUP.md." : ""}`,
+        message: `Meta API returned ${res.status}. Body: ${body.slice(0, 600)}`,
       };
     }
 
