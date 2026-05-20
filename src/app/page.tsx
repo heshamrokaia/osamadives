@@ -9,6 +9,7 @@ import AiFeatureRibbon from "@/components/AiFeatureRibbon";
 import GuestReviewsRibbon from "@/components/GuestReviewsRibbon";
 import InstagramRibbon from "@/components/InstagramRibbon";
 import InstagramFeed from "@/components/InstagramFeed";
+import FeaturedReel from "@/components/FeaturedReel";
 import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
@@ -447,6 +448,9 @@ export default function Home() {
 
       {/* Main Content */}
       <main id="main-content">
+        {/* Featured reel — self-hosted MP4 of Osama's sidemount dive, links to Instagram for sound */}
+        <FeaturedReel />
+
         {/* Why Dahab Section */}
         <section id="why-dahab" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
