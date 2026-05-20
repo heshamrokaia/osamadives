@@ -7,6 +7,7 @@ import * as gtag from "@/lib/gtag";
 import FloatingBadge from "@/components/FloatingBadge";
 import AiFeatureRibbon from "@/components/AiFeatureRibbon";
 import GuestReviewsRibbon from "@/components/GuestReviewsRibbon";
+import InstagramRibbon from "@/components/InstagramRibbon";
 import InstagramFeed from "@/components/InstagramFeed";
 import BackToTop from "@/components/BackToTop";
 
@@ -386,6 +387,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             <AiFeatureRibbon variant="hero" />
             <GuestReviewsRibbon variant="hero" />
+            <InstagramRibbon variant="hero" />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -858,6 +860,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Instagram Feed - auto-pulled from @osama_mohamed_hassan via Behold widget */}
+        <InstagramFeed />
+
         {/* Stories from Fellow Divers */}
         <section id="stories" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
@@ -982,9 +987,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Instagram Feed - auto-pulled from @osama_mohamed_hassan via Meta Graph API */}
-        <InstagramFeed />
 
         {/* Contact Section */}
         <section id="contact" className="py-20 px-4 bg-[#5a5f4e] text-white">

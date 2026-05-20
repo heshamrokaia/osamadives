@@ -8,7 +8,7 @@ const BEHOLD_FEED_ID = "uMh92JNjwTxGtltG2UdH";
 
 export default function InstagramFeed() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section id="instagram-feed" className="py-20 px-4 bg-white scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2
