@@ -27,18 +27,18 @@ This is free, doesn't lose followers, doesn't notify anyone. It does add an "Ins
 
 The Meta Graph API only reaches Instagram accounts that are linked to a Facebook page you control.
 
-1. Go to [business.facebook.com](https://business.facebook.com) — log in as the admin of `facebook.com/osamasharks`
+1. Go to [business.facebook.com](https://business.facebook.com) — log in as the admin of `facebook.com/osamadives`
 2. Left sidebar → **Accounts → Instagram accounts**
 3. Click **Add** → log into Osama's Instagram
-4. **Settings → Pages → osamasharks → Connect Instagram** → confirm
+4. **Settings → Pages → osamadives → Connect Instagram** → confirm
 
-Verify by opening osamasharks's settings; under "Instagram" you should see `@osama_mohamed_hassan` listed.
+Verify by opening osamadives's settings; under "Instagram" you should see `@osama_mohamed_hassan` listed.
 
 ---
 
 ## Step 3 — Create a Meta for Developers app
 
-1. Go to [developers.facebook.com/apps](https://developers.facebook.com/apps) → log in with the same Facebook account that admins osamasharks
+1. Go to [developers.facebook.com/apps](https://developers.facebook.com/apps) → log in with the same Facebook account that admins osamadives
 2. Click **Create App** → use case: **Other** → app type: **Business**
 3. Name it whatever — "OsamaDives Web", "Site Feed", anything
 4. On the dashboard left sidebar, click **Add product** and add **Instagram Graph API**
@@ -76,7 +76,7 @@ Now get the Instagram User ID. With the long-lived token, run:
 curl -i -X GET "https://graph.facebook.com/v18.0/me/accounts?access_token=YOUR_LONG_LIVED_TOKEN"
 ```
 
-You'll see a list of pages. Find `osamasharks` and note its `id`. Now:
+You'll see a list of pages. Find `osamadives` and note its `id`. Now:
 
 ```bash
 curl -i -X GET "https://graph.facebook.com/v18.0/PAGE_ID?fields=instagram_business_account&access_token=YOUR_LONG_LIVED_TOKEN"
