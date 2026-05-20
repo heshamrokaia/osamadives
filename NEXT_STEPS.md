@@ -8,7 +8,7 @@ Last updated: 2026-05-19
 
 ## Hottest open item (do this when you have 20 quiet minutes)
 
-- [ ] **Wire up Instagram auto-sync.** Code is shipped. Follow [INSTAGRAM_SETUP.md](INSTAGRAM_SETUP.md) — convert IG → Business, link to osamasharks FB Page, create a Meta dev app, paste two env vars into Vercel. Section appears automatically once both vars are set. Tokens expire every 60 days → calendar reminder needed.
+- [x] **Instagram auto-sync.** DONE 2026-05-21 via Behold widget. Feed ID `uMh92JNjwTxGtltG2UdH`. Auto-renews indefinitely (Behold is a Meta Tech Provider). Free tier: 6 posts, 5000 views/month. Manage at behold.so as `heshamrokaia@gmail.com`.
 
 ## The blocker (do these before any more SEO work)
 
