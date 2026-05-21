@@ -62,6 +62,34 @@ function timeAgo(iso: string): string {
   return `${Math.round(days / 365)} years ago`;
 }
 
+const GENERIC_HEADLINE = "From the Red Sea.";
+
+/**
+ * Extract a clean Apple-style headline from the first line of an IG caption.
+ * Strips hashtags, @mentions, URLs. Capitalizes first letter. Ends with punctuation.
+ * Returns null if no usable text — caller falls back to GENERIC_HEADLINE.
+ */
+function captionToHeadline(caption: string | undefined | null): string | null {
+  if (!caption) return null;
+  const firstLine = caption.split(/\r?\n/)[0]?.trim();
+  if (!firstLine) return null;
+
+  let clean = firstLine
+    .replace(/#\w+/g, "")
+    .replace(/@[\w.]+/g, "")
+    .replace(/https?:\/\/\S+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (clean.length < 4) return null;
+
+  clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+  if (clean.length > 60) clean = clean.slice(0, 60).replace(/\s+\S*$/, "") + "…";
+  if (!/[.!?…]$/.test(clean)) clean += ".";
+
+  return clean;
+}
+
 export default async function FeaturedReel() {
   const post = await fetchLatestReel();
   if (!post) return null;
@@ -69,6 +97,7 @@ export default async function FeaturedReel() {
   const imgUrl = post.sizes.large.mediaUrl;
   const ago = timeAgo(post.timestamp);
   const isVideo = post.isReel || post.mediaType === "VIDEO";
+  const headline = captionToHeadline(post.caption) ?? GENERIC_HEADLINE;
 
   return (
     <section className="relative py-20 px-4 bg-gradient-to-b from-[#5a5f4e] via-[#4a4f3e] to-[#2a2e25] text-white overflow-hidden">
@@ -83,7 +112,7 @@ export default async function FeaturedReel() {
               className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 leading-[1.05]"
               style={{ fontFamily: "serif" }}
             >
-              From the Red Sea.
+              {headline}
             </h2>
             <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-md md:max-w-none mx-auto md:mx-0">
               Wherever Osama was on his most recent dive &mdash; sidemount training, the Blue Hole, reef life, a quiet day on the boat. This rotates whenever he posts.
