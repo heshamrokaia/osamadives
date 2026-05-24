@@ -929,7 +929,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     id: 'gallery-group-dinner',
     src: '/images/gallery/dahab/whatsapp-image-2025-05-10-at-13.03.17-1.jpeg',
     alt: 'Large group of about twenty divers at a long dinner table at Shark Restaurant in Dahab, decorated with colorful hanging lanterns, tropical plants, and orange cushions, everyone smiling at the camera',
-    title: 'Shark Restaurant — The Dive Family Table',
+    title: 'Shark Restaurant. The Dive Family Table.',
     description: 'This is my restaurant, Shark Restaurant - rated 4.5 on TripAdvisor with over 1,350 reviews. Twenty of us at one long table after a full day of diving. The colorful lanterns, the plants, the orange cushions - this is the atmosphere we built here. Everyone is tired from diving but nobody wants to go home.',
     location: 'Shark Restaurant, Dahab, Egypt',
     coordinates: { lat: 28.5000, lng: 34.5167 },
