@@ -7,32 +7,57 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .font-display {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-variation-settings: "opsz" 144;
+  }
+  .label-eyebrow {
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
 }
 
-/* Facebook Gallery Item Tooltip Styles */
 @layer components {
-  /* Smooth tooltip animation */
+  /* Fade-in on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 900ms ease, transform 900ms ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slow parallax base */
+  .parallax-slow {
+    will-change: transform;
+    transition: transform 200ms linear;
+  }
+
+  /* Gallery tooltip styles (preserve existing behavior) */
   .fb-gallery-tooltip {
     animation: tooltipFadeIn 0.2s ease-out;
   }
-
   @keyframes tooltipFadeIn {
     from {
       opacity: 0;
@@ -43,21 +68,15 @@ body {
       transform: translateX(-50%) translateY(0);
     }
   }
-
-  /* Gallery item hover effects */
   .fb-gallery-item {
     @apply transition-all duration-300;
   }
-
   .fb-gallery-item:hover {
     @apply shadow-lg;
   }
-
-  /* Click ripple effect */
   .click-ripple {
     animation: ripple 0.4s ease-out;
   }
-
   @keyframes ripple {
     0% {
       transform: scale(0.8);
@@ -69,37 +88,56 @@ body {
     }
   }
 
-  /* Stories lightbox scrollbar */
+  /* Stories sidebar scrollbar */
   .stories-sidebar::-webkit-scrollbar {
     width: 6px;
   }
-
   .stories-sidebar::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
   }
-
   .stories-sidebar::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
   }
-
   .stories-sidebar::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
   }
 
-  /* Line clamp utility */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  video[autoplay] {
+    display: none;
+  }
+  .parallax-slow {
+    transform: none !important;
   }
 }
